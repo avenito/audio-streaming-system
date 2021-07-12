@@ -9,3 +9,4 @@ The target devices are:
 Figure 1 depict the basic architecture.
 Central: This device runs the web interface and setup the network configuration.
 Node: All nodes can connect one A2DP device, working as source, or can be connect to a digital analog converter.
+![Basic Architecture](Doc/BasicArchitecture.tif?raw=true "Figure 1 - Basic Architectur")
