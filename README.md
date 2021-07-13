@@ -6,8 +6,9 @@ The target devices are:
 1. Raspberry Pi for the central
 1. ESP-32 for the nodes
 ### Tools
-The tools used are:
+Installed tools:
 1. [Espressif IDE](https://docs.espressif.com/projects/esp-idf/en/v4.1/get-started/index.html) to compile and flash the ESP-32.
+1. [IDF Eclipse Plugin](https://github.com/espressif/idf-eclipse-plugin/blob/master/README.md#Prerequisites) to use Eclipse as the editor.
 ### Basic Architecture
 Figure 1 depict the basic architecture.
 1. Central: This device runs the web interface and setup the network configuration.
