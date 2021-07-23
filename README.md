@@ -8,6 +8,7 @@ The target devices are:
 ### Tools
 Installed tools:
 1. [Espressif IDE](https://docs.espressif.com/projects/esp-idf/en/v4.1/get-started/index.html) to compile and flash the ESP-32, or [here](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started-legacy/eclipse-setup.html) for legacy GNU Maker.
+1. [ESP-MDF](https://github.com/espressif/esp-mdf) - Espressif Mesh Development Framework. 
 1. [IDF Eclipse Plugin](https://github.com/espressif/idf-eclipse-plugin/blob/master/README.md#Prerequisites) to use Eclipse as the editor.
 ### Basic Architecture
 Figure 1 depict the basic architecture.
