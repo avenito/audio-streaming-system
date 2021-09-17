@@ -1,0 +1,74 @@
+menu "ASS Configuration"
+
+choice EXAMPLE_A2DP_SINK_OUTPUT
+    prompt "A2DP Sink Output"
+    default EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
+    help
+        Select to use Internal DAC or external I2S driver
+
+    config EXAMPLE_A2DP_SINK_OUTPUT_INTERNAL_DAC
+        bool "Internal DAC"
+        help
+            Select this to use Internal DAC sink output
+
+    config EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
+        bool "External I2S Codec"
+        help
+            Select this to use External I2S sink output
+
+endchoice
+    
+choice DEVICE_TYPE
+    bool "Configure the device type"
+    default DEVICE_TYPE_NODE
+    help
+        Configure the device type
+
+config DEVICE_TYPE_ROOT
+   bool "Root device"
+config DEVICE_TYPE_NODE
+   bool "Non-Root device"
+endchoice
+
+config DEVICE_TYPE
+    int
+    default 1 if DEVICE_TYPE_ROOT
+    default 2 if DEVICE_TYPE_NODE
+
+config MESH_ID
+    string "Mesh ID"
+        default "123456"
+        help
+            The maximum length is 6 bytes. Mesh network identification,
+            Nodes with the same mesh ID can, communicate with each other.
+
+config MESH_CHANNEL
+    int "Mesh network channel"
+    range 1 14
+    default 13
+    help
+        Mesh network channel.
+
+config EXAMPLE_I2S_LRCK_PIN
+    int "I2S LRCK (WS) GPIO"
+    default 22
+    depends on EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
+    help
+        GPIO number to use for I2S LRCK(WS) Driver.
+
+config EXAMPLE_I2S_BCK_PIN
+    int "I2S BCK GPIO"
+    default 26
+    depends on EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
+    help
+        GPIO number to use for I2S BCK Driver.
+
+config EXAMPLE_I2S_DATA_PIN
+    int "I2S DATA GPIO"
+    default 25
+    depends on EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
+    help
+        GPIO number to use for I2S Data Driver.
+
+
+endmenu

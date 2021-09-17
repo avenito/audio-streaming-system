@@ -1,0 +1,363 @@
+host/bluedroid/stack/btm/btm_acl.o: \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/btm/btm_acl.c \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/bt_types.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/include/bt_common.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/include/bt_user_config.h \
+ /home/venito/ASS/audio-streaming-system/build/include/sdkconfig.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp_rom_sys.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log_internal.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/semaphore.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_compiler.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/FreeRTOSConfig.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_config.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/hal.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/system.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_context.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtensa_context.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/corebits.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/projdefs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/portable.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/deprecated_definitions.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/portmacro.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtruntime.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/specreg.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtruntime-core-state.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_private/crosscore_int.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_timer/include/esp_timer.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_err.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_system.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/esp_attr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_bit_defs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_idf_version.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/esp_newlib.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_hw_support/include/soc/spinlock.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_hw_support/include/soc/cpu.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xt_instr_macros.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/cpu_hal.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc_caps.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/cpu_types.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/cpu_ll.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/extreg.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/soc_memory_layout.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_assert.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_hw_support/include/soc/compare_set.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/heap/include/esp_heap_caps.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/heap/include/multi_heap.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_api.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtensa_api.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtensa_context.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/portbenchmark.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/portmacro_priv.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/mpu_wrappers.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/list.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/semphr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bt_target.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bluedroid_user_config.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/include/bt_user_config.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/dyn_mem.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bluedroid_user_config.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bt_trace.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/controller.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/bdaddr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bt_defs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arpa/inet.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/opt.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/lwipopts.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/time.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/time.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/ioctl.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_task.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/netif/dhcp_state.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/debug.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/arch.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/cc.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/errno.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/sys_arch.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/vfs_lwip.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip_addr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip6_zone.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/hash_map.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/device_features.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/hci/include/hci/hci_layer.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/allocator.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/osi.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/future.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/thread.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/hci/include/hci/hci_packet_factory.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/event_mask.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/hci/include/hci/hci_packet_parser.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/version.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/hcimsgs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/hcidefs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/btu.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/btm_api.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/sdp_api.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/sdpdefs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/smp_api.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/btm/include/btm_int.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/rfcdefs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/fixed_queue.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/list.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/l2cap/include/l2c_int.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/l2c_api.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/l2cdefs.h
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/bt_types.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/include/bt_common.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/include/bt_user_config.h:
+
+/home/venito/ASS/audio-streaming-system/build/include/sdkconfig.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp_rom_sys.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log_internal.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/semaphore.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_compiler.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/FreeRTOSConfig.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_config.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/hal.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtensa-versions.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/core-matmap.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/tie.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/system.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_context.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtensa_context.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/corebits.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/projdefs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/portable.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/deprecated_definitions.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/portmacro.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtruntime.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/specreg.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtruntime-core-state.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_private/crosscore_int.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_timer/include/esp_timer.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_err.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_system.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/esp_attr.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_bit_defs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_idf_version.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/esp_newlib.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_hw_support/include/soc/spinlock.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_hw_support/include/soc/cpu.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xt_instr_macros.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/cpu_hal.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc_caps.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/cpu_types.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/cpu_ll.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/extreg.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/soc_memory_layout.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_assert.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_hw_support/include/soc/compare_set.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/heap/include/esp_heap_caps.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/heap/include/multi_heap.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_api.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtensa_api.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtensa_context.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/portbenchmark.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/portmacro_priv.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/mpu_wrappers.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/list.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/semphr.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bt_target.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bluedroid_user_config.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/include/bt_user_config.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/dyn_mem.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bluedroid_user_config.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bt_trace.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/controller.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/bdaddr.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/common/include/common/bt_defs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arpa/inet.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/inet.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/opt.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/lwipopts.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/time.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/time.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/ioctl.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_task.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/netif/dhcp_state.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/debug.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/arch.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/cc.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/errno.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/sys_arch.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/vfs_lwip.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/def.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip_addr.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/def.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip6_zone.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/hash_map.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/device_features.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/hci/include/hci/hci_layer.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/allocator.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/osi.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/future.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/thread.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/hci/include/hci/hci_packet_factory.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/event_mask.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/hci/include/hci/hci_packet_parser.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/device/include/device/version.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/hcimsgs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/hcidefs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/btu.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/btm_api.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/sdp_api.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/sdpdefs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/smp_api.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/btm/include/btm_int.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/rfcdefs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/fixed_queue.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/common/osi/include/osi/list.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/l2cap/include/l2c_int.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/l2c_api.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/include/stack/l2cdefs.h:
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/stack/btm/btm_acl.c:
