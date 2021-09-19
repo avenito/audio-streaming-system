@@ -36,7 +36,7 @@ static void bt_av_hdl_stack_evt(uint16_t event, void *p_param);
 
 // #define MEMORY_DEBUG
 
-static const char *TAG = "get_started";
+static const char *TAG = "ASS";
 
 static void root_task(void *arg)
 {
@@ -117,7 +117,7 @@ void node_write_task(void *arg)
             continue;
         }
 
-        size = sprintf(data, "(%d) Hello root!", count++);
+        size = sprintf(data, "(%d) Hello root! WORKING!!!", count++);
         ret = mwifi_write(NULL, &data_type, data, size, true);
         MDF_ERROR_CONTINUE(ret != MDF_OK, "mwifi_write, ret: %x", ret);
 
@@ -169,15 +169,7 @@ static void print_system_info_timercb(void *timer)
 
 static mdf_err_t wifi_init()
 {
-    mdf_err_t ret          = nvs_flash_init();
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-
-    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        MDF_ERROR_ASSERT(nvs_flash_erase());
-        ret = nvs_flash_init();
-    }
-
-    MDF_ERROR_ASSERT(ret);
 
     MDF_ERROR_ASSERT(esp_netif_init());
     MDF_ERROR_ASSERT(esp_event_loop_create_default());
@@ -226,51 +218,95 @@ static mdf_err_t event_loop_cb(mdf_event_loop_t event, void *ctx)
 
 void app_main()
 {
-	esp_err_t err;
+    mdf_err_t err  = nvs_flash_init();
 
- // Initialize NVS.
-	esp_err_t ret = nvs_flash_init();
-	if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-		ESP_ERROR_CHECK(nvs_flash_erase());
-		ret = nvs_flash_init();
-	}
-	ESP_ERROR_CHECK( ret );
+    if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        MDF_ERROR_ASSERT(nvs_flash_erase());
+        err = nvs_flash_init();
+    }
 
-    ESP_ERROR_CHECK(esp_bt_controller_mem_release(ESP_BT_MODE_BLE));
+    MDF_ERROR_ASSERT(err);
 
-	#if CONFIG_ESP32_WIFI_SW_COEXIST_ENABLE
-    	ESP_LOGI(BT_AV_TAG, "CONFIG_ESP32_WIFI_SW_COEXIST_ENABLE");
-	/*	if ((module == PHY_BT_MODULE) || (module == PHY_WIFI_MODULE)){
-			uint32_t phy_bt_wifi_mask = BIT(PHY_BT_MODULE) | BIT(PHY_WIFI_MODULE);
-			if ((s_module_phy_rf_init & phy_bt_wifi_mask) == phy_bt_wifi_mask) { //both wifi & bt enabled
-				coex_init();
-				coex_preference_set(CONFIG_ESP32_WIFI_SW_COEXIST_PREFERENCE_VALUE);
-				coex_resume();
-			}
-		}*/
+	   i2s_config_t i2s_config = {
+		#ifdef CONFIG_EXAMPLE_A2DP_SINK_OUTPUT_INTERNAL_DAC
+				.mode = I2S_MODE_MASTER | I2S_MODE_TX | I2S_MODE_DAC_BUILT_IN,
+		#else
+				.mode = I2S_MODE_MASTER | I2S_MODE_TX,                                  // Only TX
+		#endif
+				.sample_rate = 44100,
+				.bits_per_sample = 16,
+				.channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,                           //2-channels
+				.communication_format = I2S_COMM_FORMAT_I2S_MSB,
+				.dma_buf_count = 6,
+				.dma_buf_len = 60,
+				.intr_alloc_flags = 0,                                                  //Default interrupt priority
+				.tx_desc_auto_clear = true                                              //Auto clear tx descriptor on underflow
+			};
+
+		i2s_driver_install(0, &i2s_config, 0, NULL);
+
+		#ifdef CONFIG_EXAMPLE_A2DP_SINK_OUTPUT_INTERNAL_DAC
+			i2s_set_dac_mode(I2S_DAC_CHANNEL_BOTH_EN);
+			i2s_set_pin(0, NULL);
+		#else
+			i2s_pin_config_t pin_config = {
+				.bck_io_num = CONFIG_EXAMPLE_I2S_BCK_PIN, // @suppress("Symbol is not resolved")
+				.ws_io_num = CONFIG_EXAMPLE_I2S_LRCK_PIN, // @suppress("Symbol is not resolved")
+				.data_out_num = CONFIG_EXAMPLE_I2S_DATA_PIN, // @suppress("Symbol is not resolved")
+				.data_in_num = -1                                                       //Not used
+			};
+
+			i2s_set_pin(0, &pin_config);
+		#endif
+
+	ESP_ERROR_CHECK(esp_bt_controller_mem_release(ESP_BT_MODE_BLE));
+
+	   esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();
+
+	   if ((err = esp_bt_controller_init(&bt_cfg)) != ESP_OK) {
+		   ESP_LOGE(BT_AV_TAG, "%s initialize controller failed: %s\n", __func__, esp_err_to_name(err));
+		   return;
+	   }
+
+	   if ((err = esp_bt_controller_enable(ESP_BT_MODE_CLASSIC_BT)) != ESP_OK) {
+		   ESP_LOGE(BT_AV_TAG, "%s enable controller failed: %s\n", __func__, esp_err_to_name(err));
+		   return;
+	   }
+
+	   if ((err = esp_bluedroid_init()) != ESP_OK) {
+		   ESP_LOGE(BT_AV_TAG, "%s initialize bluedroid failed: %s\n", __func__, esp_err_to_name(err));
+		   return;
+	   }
+
+	   if ((err = esp_bluedroid_enable()) != ESP_OK) {
+		   ESP_LOGE(BT_AV_TAG, "%s enable bluedroid failed: %s\n", __func__, esp_err_to_name(err));
+		   return;
+	   }
+
+	    /* create application task */
+	    bt_app_task_start_up();
+
+	    /* Bluetooth device name, connection mode and profile set up */
+	    bt_app_work_dispatch(bt_av_hdl_stack_evt, BT_APP_EVT_STACK_UP, NULL, 0, NULL);
+
+	#if (CONFIG_BT_SSP_ENABLED == true)
+	    /* Set default parameters for Secure Simple Pairing */
+	    esp_bt_sp_param_t param_type = ESP_BT_SP_IOCAP_MODE;
+	    esp_bt_io_cap_t iocap = ESP_BT_IO_CAP_IO;
+	    esp_bt_gap_set_security_param(param_type, &iocap, sizeof(uint8_t));
 	#endif
 
-    esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();
-    if ((err = esp_bt_controller_init(&bt_cfg)) != ESP_OK) {
-        ESP_LOGE(BT_AV_TAG, "%s initialize controller failed: %s\n", __func__, esp_err_to_name(err));
-        return;
-    }
-
-    if ((err = esp_bt_controller_enable(ESP_BT_MODE_CLASSIC_BT)) != ESP_OK) {
-        ESP_LOGE(BT_AV_TAG, "%s enable controller failed: %s\n", __func__, esp_err_to_name(err));
-        return;
-    }
-
-    if ((err = esp_bluedroid_init()) != ESP_OK) {
-        ESP_LOGE(BT_AV_TAG, "%s initialize bluedroid failed: %s\n", __func__, esp_err_to_name(err));
-        return;
-    }
-
-    if ((err = esp_bluedroid_enable()) != ESP_OK) {
-        ESP_LOGE(BT_AV_TAG, "%s enable bluedroid failed: %s\n", __func__, esp_err_to_name(err));
-        return;
-    }
-
+	    /*
+	     * Set default parameters for Legacy Pairing
+	     * Use fixed pin code
+	     */
+	    esp_bt_pin_type_t pin_type = ESP_BT_PIN_TYPE_FIXED;
+	    esp_bt_pin_code_t pin_code;
+	    pin_code[0] = '1';
+	    pin_code[1] = '2';
+	    pin_code[2] = '3';
+	    pin_code[3] = '4';
+	    esp_bt_gap_set_pin(pin_type, 4, pin_code);
 
     mwifi_init_config_t cfg = MWIFI_INIT_CONFIG_DEFAULT();
     mwifi_config_t config   = {
@@ -313,37 +349,7 @@ void app_main()
 
     /* Bluetooth */
 
-    i2s_config_t i2s_config = {
-    #ifdef CONFIG_EXAMPLE_A2DP_SINK_OUTPUT_INTERNAL_DAC
-            .mode = I2S_MODE_MASTER | I2S_MODE_TX | I2S_MODE_DAC_BUILT_IN,
-    #else
-            .mode = I2S_MODE_MASTER | I2S_MODE_TX,                                  // Only TX
-    #endif
-            .sample_rate = 44100,
-            .bits_per_sample = 16,
-            .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,                           //2-channels
-            .communication_format = I2S_COMM_FORMAT_I2S_MSB,
-            .dma_buf_count = 6,
-            .dma_buf_len = 60,
-            .intr_alloc_flags = 0,                                                  //Default interrupt priority
-            .tx_desc_auto_clear = true                                              //Auto clear tx descriptor on underflow
-        };
-
-    i2s_driver_install(0, &i2s_config, 0, NULL);
-
-	#ifdef CONFIG_EXAMPLE_A2DP_SINK_OUTPUT_INTERNAL_DAC
-		i2s_set_dac_mode(I2S_DAC_CHANNEL_BOTH_EN);
-		i2s_set_pin(0, NULL);
-	#else
-		i2s_pin_config_t pin_config = {
-			.bck_io_num = CONFIG_EXAMPLE_I2S_BCK_PIN, // @suppress("Symbol is not resolved")
-			.ws_io_num = CONFIG_EXAMPLE_I2S_LRCK_PIN, // @suppress("Symbol is not resolved")
-			.data_out_num = CONFIG_EXAMPLE_I2S_DATA_PIN, // @suppress("Symbol is not resolved")
-			.data_in_num = -1                                                       //Not used
-		};
-
-		i2s_set_pin(0, &pin_config);
-	#endif
+   	//ESP_ERROR_CHECK( ret );
 
 
 }
