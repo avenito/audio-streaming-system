@@ -4,7 +4,7 @@ A simple system based on mesh and audio streaming.
 ### Target
 The target devices are:
 1. Raspberry Pi for the central
-1. ESP-32 for the nodes
+1. ESP-32 for the nodes ([ESP-WROOM-32 38 PIN Develeopment Board PINOUT](https://www.studiopieters.nl/esp32-pinout/))
 ### Tools
 Installed tools:
 1. [Espressif IDE](https://docs.espressif.com/projects/esp-idf/en/v4.1/get-started/index.html) to compile and flash the ESP-32, or [here](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started-legacy/eclipse-setup.html) for legacy GNU Maker.
