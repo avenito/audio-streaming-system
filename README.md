@@ -18,4 +18,11 @@ Figure 1 depict the basic architecture.
 <p align="center"><img src="Doc/BasicArchitecture.jpg" height="353px" width="560px" /></br>
 <span>Figure 1</span>
 </p>
-</html>
+</html>  
+
+
+### How the branchs are named
+The branchs names should start according the following:  
+1. **BF** - for basic functions
+1. **FX** - for bug fixies
+1. **FT** - for new features
