@@ -26,7 +26,7 @@ static void bt_app_work_dispatched(bt_app_msg_t *msg);
 static xQueueHandle s_bt_app_task_queue = NULL;
 static xTaskHandle s_bt_app_task_handle = NULL;
 static xTaskHandle s_bt_i2s_task_handle = NULL;
-static RingbufHandle_t s_ringbuf_i2s = NULL;
+static RingbufHandle_t s_ringbuf_i2s = NULL;;
 
 bool bt_app_work_dispatch(bt_app_cb_t p_cback, uint16_t event, void *p_params, int param_len, bt_app_copy_cb_t p_copy_cback)
 {
