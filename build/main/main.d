@@ -57,6 +57,8 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/event_groups.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/timers.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h \
  /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h \
  /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs_flash.h \
  /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h \
@@ -119,7 +121,6 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_interface.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event.h \
- /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_legacy.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_types.h \
@@ -291,6 +292,10 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h:
 
+/home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h:
+
 /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs_flash.h:
@@ -414,8 +419,6 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h:
 

@@ -18,6 +18,9 @@
 #include "bt_app_core.h"
 #include "driver/i2s.h"
 #include "freertos/ringbuf.h"
+#include "ASS.h"
+#include "lwip/sockets.h"
+
 
 static void bt_app_task_handler(void *arg);
 static bool bt_app_send_msg(bt_app_msg_t *msg);
@@ -26,7 +29,7 @@ static void bt_app_work_dispatched(bt_app_msg_t *msg);
 static xQueueHandle s_bt_app_task_queue = NULL;
 static xTaskHandle s_bt_app_task_handle = NULL;
 static xTaskHandle s_bt_i2s_task_handle = NULL;
-static RingbufHandle_t s_ringbuf_i2s = NULL;;
+static RingbufHandle_t s_ringbuf_i2s = NULL;
 
 bool bt_app_work_dispatch(bt_app_cb_t p_cback, uint16_t event, void *p_params, int param_len, bt_app_copy_cb_t p_copy_cback)
 {
@@ -157,9 +160,10 @@ void bt_i2s_task_shut_down(void)
 
 size_t write_ringbuf(const uint8_t *data, size_t size)
 {
+	int err;
     BaseType_t done = xRingbufferSend(s_ringbuf_i2s, (void *)data, size, (portTickType)portMAX_DELAY);
     if(done){
-        return size;
+    	return size;
     } else {
         return 0;
     }
