@@ -12,8 +12,18 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "mdf_common.h"
-#include "mwifi.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "freertos/event_groups.h"
+#include "freertos/ringbuf.h"
+#include "nvs.h"
+#include "nvs_flash.h"
+#include "esp_system.h"
+#include "esp_log.h"
 
 #include "esp_bt.h"
 #include "bt_app_core.h"
@@ -25,6 +35,49 @@
 #include "esp_avrc_api.h"
 #include "driver/i2s.h"
 
+#include <sys/param.h>
+#include "esp_system.h"
+#include "esp_wifi.h"
+#include "esp_event.h"
+#include "esp_log.h"
+#include "nvs_flash.h"
+#include "esp_netif.h"
+#include "protocol_examples_common.h"
+
+#include "lwip/err.h"
+#include "lwip/sockets.h"
+#include "lwip/sys.h"
+#include <lwip/netdb.h>
+
+#define ESP_PORT		   3333//CONFIG_EXAMPLE_PORT
+#define ESP_WIFI_SSID      "VIRUS"//CONFIG_ESP_WIFI_SSID
+#define ESP_WIFI_PASS      "h1y2g3k5"//CONFIG_ESP_WIFI_PASSWORD
+#define ESP_MAXIMUM_RETRY  3//CONFIG_ESP_MAXIMUM_RETRY
+#define HOST_IP_ADDR	   "192.168.178.255"
+
+/* DEBUG */
+#define DEBUG
+static const char 			*TAG = "UDP_SERVER";
+
+
+/* FreeRTOS event group to signal when we are connected*/
+static EventGroupHandle_t s_wifi_event_group;
+
+static int s_retry_num = 0;
+
+
+/* The event group allows multiple bits for each event, but we only care about two events:
+ * - we are connected to the AP with an IP
+ * - we failed to connect after the maximum amount of retries */
+#define WIFI_CONNECTED_BIT BIT0
+#define WIFI_FAIL_BIT      BIT1
+
+static RingbufHandle_t s_ringbuf_wifi = NULL;
+static struct sockaddr_in local_addr;
+static struct sockaddr_in origin_addr;
+int8_t	broadcast_msg = 0;
+int sock;
+
 
 /* event for handler "bt_av_hdl_stack_up */
 enum {
@@ -32,325 +85,299 @@ enum {
 };
 
 /* handler for bluetooth stack enabled events */
+
 static void bt_av_hdl_stack_evt(uint16_t event, void *p_param);
 
-// #define MEMORY_DEBUG
+/* handler for wifi stack enabled events */
 
-static const char *TAG = "ASS";
-
-static void root_task(void *arg)
+static void event_handler(void* arg, esp_event_base_t event_base,
+                                int32_t event_id, void* event_data)
 {
-    mdf_err_t ret                    = MDF_OK;
-    char *data                       = MDF_MALLOC(MWIFI_PAYLOAD_LEN);
-    size_t size                      = MWIFI_PAYLOAD_LEN;
-    uint8_t src_addr[MWIFI_ADDR_LEN] = {0x0};
-    mwifi_data_type_t data_type      = {0};
-
-    MDF_LOGI("Root is running");
-
-    for (int i = 0;; ++i) {
-        if (!mwifi_is_started()) {
-            vTaskDelay(500 / portTICK_RATE_MS);
-            continue;
+    if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
+        esp_wifi_connect();
+    } else if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
+        if (s_retry_num < ESP_MAXIMUM_RETRY) {
+            esp_wifi_connect();
+            s_retry_num++;
+            ESP_LOGI(TAG, "retry to connect to the AP");
+        } else {
+            xEventGroupSetBits(s_wifi_event_group, WIFI_FAIL_BIT);
         }
-
-        size = MWIFI_PAYLOAD_LEN;
-        memset(data, 0, MWIFI_PAYLOAD_LEN);
-        ret = mwifi_root_read(src_addr, &data_type, data, &size, portMAX_DELAY);
-        MDF_ERROR_CONTINUE(ret != MDF_OK, "<%s> mwifi_root_read", mdf_err_to_name(ret));
-        MDF_LOGI("Root receive, addr: " MACSTR ", size: %d, data: %s", MAC2STR(src_addr), size, data);
-
-        size = sprintf(data, "(%d) Hello node!", i);
-        ret = mwifi_root_write(src_addr, 1, &data_type, data, size, true);
-        MDF_ERROR_CONTINUE(ret != MDF_OK, "mwifi_root_recv, ret: %x", ret);
-        MDF_LOGI("Root send, addr: " MACSTR ", size: %d, data: %s", MAC2STR(src_addr), size, data);
+        ESP_LOGI(TAG,"connect to the AP fail");
+    } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
+        ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
+        ESP_LOGI(TAG, "got ip:" IPSTR, IP2STR(&event->ip_info.ip));
+        s_retry_num = 0;
+        xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
     }
-
-    MDF_LOGW("Root is exit");
-
-    MDF_FREE(data);
-    vTaskDelete(NULL);
 }
 
-static void node_read_task(void *arg)
+void wifi_init_sta(void)
 {
-    mdf_err_t ret = MDF_OK;
-    char *data    = MDF_MALLOC(MWIFI_PAYLOAD_LEN);
-    size_t size   = MWIFI_PAYLOAD_LEN;
-    mwifi_data_type_t data_type      = {0x0};
-    uint8_t src_addr[MWIFI_ADDR_LEN] = {0x0};
+    s_wifi_event_group = xEventGroupCreate();
 
-    MDF_LOGI("Note read task is running");
+    ESP_ERROR_CHECK(esp_netif_init());
 
-    for (;;) {
-        if (!mwifi_is_connected()) {
-            vTaskDelay(500 / portTICK_RATE_MS);
-            continue;
-        }
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+    esp_netif_create_default_wifi_sta();
 
-        size = MWIFI_PAYLOAD_LEN;
-        memset(data, 0, MWIFI_PAYLOAD_LEN);
-        ret = mwifi_read(src_addr, &data_type, data, &size, portMAX_DELAY);
-        MDF_ERROR_CONTINUE(ret != MDF_OK, "mwifi_read, ret: %x", ret);
-        MDF_LOGI("Node receive, addr: " MACSTR ", size: %d, data: %s", MAC2STR(src_addr), size, data);
-    }
-
-    MDF_LOGW("Note read task is exit");
-
-    MDF_FREE(data);
-    vTaskDelete(NULL);
-}
-
-void node_write_task(void *arg)
-{
-    mdf_err_t ret = MDF_OK;
-    int count     = 0;
-    size_t size   = 0;
-    char *data    = MDF_MALLOC(MWIFI_PAYLOAD_LEN);
-    mwifi_data_type_t data_type = {0x0};
-
-    MDF_LOGI("Node write task is running");
-
-    for (;;) {
-        if (!mwifi_is_connected()) {
-            vTaskDelay(500 / portTICK_RATE_MS);
-            continue;
-        }
-
-        size = sprintf(data, "(%d) Hello root! WORKING!!!", count++);
-        ret = mwifi_write(NULL, &data_type, data, size, true);
-        MDF_ERROR_CONTINUE(ret != MDF_OK, "mwifi_write, ret: %x", ret);
-
-        vTaskDelay(1000 / portTICK_RATE_MS);
-    }
-
-    MDF_LOGW("Node write task is exit");
-
-    MDF_FREE(data);
-    vTaskDelete(NULL);
-}
-
-/**
- * @brief Timed printing system information
- */
-static void print_system_info_timercb(void *timer)
-{
-    uint8_t primary                 = 0;
-    wifi_second_chan_t second       = 0;
-    mesh_addr_t parent_bssid        = {0};
-    uint8_t sta_mac[MWIFI_ADDR_LEN] = {0};
-    wifi_sta_list_t wifi_sta_list   = {0x0};
-
-    esp_wifi_get_mac(ESP_IF_WIFI_STA, sta_mac);
-    esp_wifi_ap_get_sta_list(&wifi_sta_list);
-    esp_wifi_get_channel(&primary, &second);
-    esp_mesh_get_parent_bssid(&parent_bssid);
-
-    MDF_LOGI("System information, channel: %d, layer: %d, self mac: " MACSTR ", parent bssid: " MACSTR
-             ", parent rssi: %d, node num: %d, free heap: %u", primary,
-             esp_mesh_get_layer(), MAC2STR(sta_mac), MAC2STR(parent_bssid.addr),
-             mwifi_get_parent_rssi(), esp_mesh_get_total_node_num(), esp_get_free_heap_size());
-
-    for (int i = 0; i < wifi_sta_list.num; i++) {
-        MDF_LOGI("Child mac: " MACSTR, MAC2STR(wifi_sta_list.sta[i].mac));
-    }
-
-#ifdef MEMORY_DEBUG
-
-    if (!heap_caps_check_integrity_all(true)) {
-        MDF_LOGE("At least one heap is corrupt");
-    }
-
-    mdf_mem_print_heap();
-    mdf_mem_print_record();
-    mdf_mem_print_task();
-#endif /**< MEMORY_DEBUG */
-}
-
-static mdf_err_t wifi_init()
-{
     wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
 
-    MDF_ERROR_ASSERT(esp_netif_init());
-    MDF_ERROR_ASSERT(esp_event_loop_create_default());
-    MDF_ERROR_ASSERT(esp_wifi_init(&cfg));
-    MDF_ERROR_ASSERT(esp_wifi_set_storage(WIFI_STORAGE_FLASH));
-    MDF_ERROR_ASSERT(esp_wifi_set_mode(WIFI_MODE_STA));
-    MDF_ERROR_ASSERT(esp_wifi_set_ps(WIFI_PS_MIN_MODEM));
-    //MDF_ERROR_ASSERT(esp_wifi_set_ps(WIFI_PS_NONE));
-    MDF_ERROR_ASSERT(esp_mesh_set_6m_rate(false));
-    MDF_ERROR_ASSERT(esp_wifi_start());
+    esp_event_handler_instance_t instance_any_id;
+    esp_event_handler_instance_t instance_got_ip;
+    ESP_ERROR_CHECK(esp_event_handler_instance_register(WIFI_EVENT,
+                                                        ESP_EVENT_ANY_ID,
+                                                        &event_handler,
+                                                        NULL,
+                                                        &instance_any_id));
+    ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT,
+                                                        IP_EVENT_STA_GOT_IP,
+                                                        &event_handler,
+                                                        NULL,
+                                                        &instance_got_ip));
 
-    return MDF_OK;
-}
+    wifi_config_t wifi_config = {
+        .sta = {
+            .ssid = ESP_WIFI_SSID,
+            .password = ESP_WIFI_PASS,
+            /* Setting a password implies station will connect to all security modes including WEP/WPA.
+             * However these modes are deprecated and not advisable to be used. Incase your Access point
+             * doesn't support WPA2, these mode can be enabled by commenting below line */
+	     .threshold.authmode = WIFI_AUTH_WPA2_PSK,
 
-/**
- * @brief All module events will be sent to this task in esp-mdf
- *
- * @Note:
- *     1. Do not block or lengthy operations in the callback function.
- *     2. Do not consume a lot of memory in the callback function.
- *        The task memory of the callback function is only 4KB.
- */
-static mdf_err_t event_loop_cb(mdf_event_loop_t event, void *ctx)
-{
-    MDF_LOGI("event_loop_cb, event: %d", event);
+            .pmf_cfg = {
+                .capable = true,
+                .required = false
+            },
+        },
+    };
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_STA) );
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &wifi_config) );
+    ESP_ERROR_CHECK(esp_wifi_start() );
 
-    switch (event) {
-        case MDF_EVENT_MWIFI_STARTED:
-            MDF_LOGI("MESH is started");
-            break;
+    ESP_LOGI(TAG, "wifi_init_sta finished.");
 
-        case MDF_EVENT_MWIFI_PARENT_CONNECTED:
-            MDF_LOGI("Parent is connected on station interface");
-            break;
+    /* Waiting until either the connection is established (WIFI_CONNECTED_BIT) or connection failed for the maximum
+     * number of re-tries (WIFI_FAIL_BIT). The bits are set by event_handler() (see above) */
+    EventBits_t bits = xEventGroupWaitBits(s_wifi_event_group,
+            WIFI_CONNECTED_BIT | WIFI_FAIL_BIT,
+            pdFALSE,
+            pdFALSE,
+            portMAX_DELAY);
 
-        case MDF_EVENT_MWIFI_PARENT_DISCONNECTED:
-            MDF_LOGI("Parent is disconnected on station interface");
-            break;
-
-        default:
-            break;
+    /* xEventGroupWaitBits() returns the bits before the call returned, hence we can test which event actually
+     * happened. */
+    if (bits & WIFI_CONNECTED_BIT) {
+        ESP_LOGI(TAG, "connected to ap SSID:%s password:%s",
+                 ESP_WIFI_SSID, ESP_WIFI_PASS);
+    } else if (bits & WIFI_FAIL_BIT) {
+        ESP_LOGI(TAG, "Failed to connect to SSID:%s, password:%s",
+                 ESP_WIFI_SSID, ESP_WIFI_PASS);
+    } else {
+        ESP_LOGE(TAG, "UNEXPECTED EVENT");
     }
 
-    return MDF_OK;
+    /* The event will not be processed after unregister */
+    ESP_ERROR_CHECK(esp_event_handler_instance_unregister(IP_EVENT, IP_EVENT_STA_GOT_IP, instance_got_ip));
+    ESP_ERROR_CHECK(esp_event_handler_instance_unregister(WIFI_EVENT, ESP_EVENT_ANY_ID, instance_any_id));
+    vEventGroupDelete(s_wifi_event_group);
 }
 
-void app_main()
+static void udp_tra_task(void)
 {
-    mdf_err_t err  = nvs_flash_init();
 
+
+	size_t item_size = 0;
+	int err;
+
+	while (1) {
+
+
+		uint8_t *data = (uint8_t *)xRingbufferReceive(s_ringbuf_wifi, &item_size, (portTickType)portMAX_DELAY);
+
+#ifdef DEBUG
+		ESP_LOGI(TAG, "Data received from ringbuffer. Item_size = %d, sock = %d", item_size, sock);
+#endif
+
+		if (broadcast_msg) {
+			origin_addr.sin_addr.s_addr |= 0xFF000000;
+			origin_addr.sin_port = htons(ESP_PORT);
+		}
+
+        if (item_size != 0){
+			err = sendto(sock, data, item_size, 0, (struct sockaddr *)&origin_addr, sizeof(origin_addr));
+			if (err < 0) {
+				ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
+				break;
+			}
+			vRingbufferReturnItem(s_ringbuf_wifi,(void *)data);
+		}
+	}
+
+	vTaskDelete(NULL);
+}
+
+static void udp_server_task(void *pvParameters)
+{
+    char rx_buffer[8 * 1024];
+    char addr_str[128];
+    int addr_family = (int)pvParameters;
+    int ip_protocol = 0;
+    BaseType_t done;
+
+    while (1) {
+
+    	local_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    	local_addr.sin_family = AF_INET;
+    	local_addr.sin_port = htons(ESP_PORT);
+		ip_protocol = IPPROTO_IP;
+
+	    s_ringbuf_wifi = xRingbufferCreate(8 * 1024, RINGBUF_TYPE_BYTEBUF);
+		if(s_ringbuf_wifi == NULL){
+			ESP_LOGE(TAG, "Cannot create WiFi ringbuffer!!!");
+		    break;
+		}
+
+		sock = socket(addr_family, SOCK_DGRAM, ip_protocol);
+		if (sock < 0) {
+            ESP_LOGE(TAG, "Unable to create socket.");
+            break;
+        }
+
+        ESP_LOGI(TAG, "Socket created");
+
+        int err = bind(sock, (struct sockaddr *)&local_addr, sizeof(local_addr));
+        if (err < 0) {
+            ESP_LOGE(TAG, "Socket unable to bind.");
+        }
+        ESP_LOGI(TAG, "Socket bound, port %d", ESP_PORT);
+
+        xTaskCreate(udp_tra_task, "udp_trans", 4096, 0, 5, NULL);
+
+        while (1) {
+
+            ESP_LOGI(TAG, "Waiting for data ...");
+            socklen_t socklen = sizeof(origin_addr);
+            int len = recvfrom(sock, rx_buffer, sizeof(rx_buffer) - 1, 0, (struct sockaddr *)&origin_addr, &socklen);
+            // Error occurred during receiving
+            if (len < 0) {
+                ESP_LOGE(TAG, "recvfrom failed.");
+                break;
+            }
+            // Data received
+            else {
+                // Get the sender's ip address as string
+                inet_ntoa_r(((struct sockaddr_in *)&origin_addr)->sin_addr, addr_str, sizeof(addr_str) - 1);
+                rx_buffer[len] = 0; // Null-terminate whatever we received and treat like a string...
+#ifdef DEBUG
+                ESP_LOGI(TAG, "Received %d bytes from %s:", len, inet_ntoa(origin_addr.sin_addr.s_addr));
+#endif
+                done = xRingbufferSend(s_ringbuf_wifi, (char *)rx_buffer, len, (portTickType)portMAX_DELAY);
+#ifdef DEBUG
+                ESP_LOGI(TAG, "Done %d", done);
+#endif
+            }
+        }
+
+        if (sock != -1) {
+            ESP_LOGE(TAG, "Shutting down socket and restarting...");
+            shutdown(sock, 0);
+            close(sock);
+        }
+    }
+    vTaskDelete(NULL);
+}
+
+void app_main(void)
+{
+    //Initialize NVS
+    esp_err_t err = nvs_flash_init();
     if (err == ESP_ERR_NVS_NO_FREE_PAGES || err == ESP_ERR_NVS_NEW_VERSION_FOUND) {
-        MDF_ERROR_ASSERT(nvs_flash_erase());
-        err = nvs_flash_init();
+      ESP_ERROR_CHECK(nvs_flash_erase());
+      err = nvs_flash_init();
     }
+    ESP_ERROR_CHECK(err);
 
-    MDF_ERROR_ASSERT(err);
+    // Starts WiFi configuration
 
-	   i2s_config_t i2s_config = {
-		#ifdef CONFIG_EXAMPLE_A2DP_SINK_OUTPUT_INTERNAL_DAC
-				.mode = I2S_MODE_MASTER | I2S_MODE_TX | I2S_MODE_DAC_BUILT_IN,
-		#else
-				.mode = I2S_MODE_MASTER | I2S_MODE_TX,                                  // Only TX
-		#endif
-				.sample_rate = 44100,
-				.bits_per_sample = 16,
-				.channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,                           //2-channels
-				.communication_format = I2S_COMM_FORMAT_I2S_MSB,
-				.dma_buf_count = 6,
-				.dma_buf_len = 60,
-				.intr_alloc_flags = 0,                                                  //Default interrupt priority
-				.tx_desc_auto_clear = true                                              //Auto clear tx descriptor on underflow
-			};
+    wifi_init_sta();
 
-		i2s_driver_install(0, &i2s_config, 0, NULL);
+    xTaskCreate(udp_server_task, "udp_server", 12 * 1024 , (void*)AF_INET, 5, NULL);
 
-		#ifdef CONFIG_EXAMPLE_A2DP_SINK_OUTPUT_INTERNAL_DAC
-			i2s_set_dac_mode(I2S_DAC_CHANNEL_BOTH_EN);
-			i2s_set_pin(0, NULL);
-		#else
-			i2s_pin_config_t pin_config = {
-				.bck_io_num = CONFIG_EXAMPLE_I2S_BCK_PIN, // @suppress("Symbol is not resolved")
-				.ws_io_num = CONFIG_EXAMPLE_I2S_LRCK_PIN, // @suppress("Symbol is not resolved")
-				.data_out_num = CONFIG_EXAMPLE_I2S_DATA_PIN, // @suppress("Symbol is not resolved")
-				.data_in_num = -1                                                       //Not used
-			};
+    // Starts BlueTooth configuration
 
-			i2s_set_pin(0, &pin_config);
-		#endif
+    i2s_config_t i2s_config = {
 
-	ESP_ERROR_CHECK(esp_bt_controller_mem_release(ESP_BT_MODE_BLE));
-
-	   esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();
-
-	   if ((err = esp_bt_controller_init(&bt_cfg)) != ESP_OK) {
-		   ESP_LOGE(BT_AV_TAG, "%s initialize controller failed: %s\n", __func__, esp_err_to_name(err));
-		   return;
-	   }
-
-	   if ((err = esp_bt_controller_enable(ESP_BT_MODE_CLASSIC_BT)) != ESP_OK) {
-		   ESP_LOGE(BT_AV_TAG, "%s enable controller failed: %s\n", __func__, esp_err_to_name(err));
-		   return;
-	   }
-
-	   if ((err = esp_bluedroid_init()) != ESP_OK) {
-		   ESP_LOGE(BT_AV_TAG, "%s initialize bluedroid failed: %s\n", __func__, esp_err_to_name(err));
-		   return;
-	   }
-
-	   if ((err = esp_bluedroid_enable()) != ESP_OK) {
-		   ESP_LOGE(BT_AV_TAG, "%s enable bluedroid failed: %s\n", __func__, esp_err_to_name(err));
-		   return;
-	   }
-
-	    /* create application task */
-	    bt_app_task_start_up();
-
-	    /* Bluetooth device name, connection mode and profile set up */
-	    bt_app_work_dispatch(bt_av_hdl_stack_evt, BT_APP_EVT_STACK_UP, NULL, 0, NULL);
-
-	#if (CONFIG_BT_SSP_ENABLED == true)
-	    /* Set default parameters for Secure Simple Pairing */
-	    esp_bt_sp_param_t param_type = ESP_BT_SP_IOCAP_MODE;
-	    esp_bt_io_cap_t iocap = ESP_BT_IO_CAP_IO;
-	    esp_bt_gap_set_security_param(param_type, &iocap, sizeof(uint8_t));
-	#endif
-
-	    /*
-	     * Set default parameters for Legacy Pairing
-	     * Use fixed pin code
-	     */
-	    esp_bt_pin_type_t pin_type = ESP_BT_PIN_TYPE_FIXED;
-	    esp_bt_pin_code_t pin_code;
-	    pin_code[0] = '1';
-	    pin_code[1] = '2';
-	    pin_code[2] = '3';
-	    pin_code[3] = '4';
-	    esp_bt_gap_set_pin(pin_type, 4, pin_code);
-
-    mwifi_init_config_t cfg = MWIFI_INIT_CONFIG_DEFAULT();
-    mwifi_config_t config   = {
-        .channel   = CONFIG_MESH_CHANNEL,
-        .mesh_id   = CONFIG_MESH_ID,
-        .mesh_type = CONFIG_DEVICE_TYPE,
+    	.mode = I2S_MODE_MASTER | I2S_MODE_TX,                                  // Only TX
+        .sample_rate = 44100,
+        .bits_per_sample = 16,
+        .channel_format = I2S_CHANNEL_FMT_RIGHT_LEFT,                           //2-channels
+        .communication_format = I2S_COMM_FORMAT_STAND_MSB,
+        .dma_buf_count = 6,
+        .dma_buf_len = 60,
+        .intr_alloc_flags = 0,                                                  //Default interrupt priority
+        .tx_desc_auto_clear = true                                              //Auto clear tx descriptor on underflow
     };
 
-    /**
-     * @brief Set the log level for serial port printing.
-     */
-    esp_log_level_set("*", ESP_LOG_INFO);
-    esp_log_level_set(TAG, ESP_LOG_DEBUG);
 
-    /**
-     * @brief Initialize wifi mesh.
-     */
-    MDF_ERROR_ASSERT(mdf_event_loop_init(event_loop_cb));
-    MDF_ERROR_ASSERT(wifi_init());
-    MDF_ERROR_ASSERT(mwifi_init(&cfg));
-    MDF_ERROR_ASSERT(mwifi_set_config(&config));
-    MDF_ERROR_ASSERT(mwifi_start());
+    i2s_driver_install(0, &i2s_config, 0, NULL);
+    i2s_pin_config_t pin_config = {
+        .bck_io_num = CONFIG_EXAMPLE_I2S_BCK_PIN,
+        .ws_io_num = CONFIG_EXAMPLE_I2S_LRCK_PIN,
+        .data_out_num = CONFIG_EXAMPLE_I2S_DATA_PIN,
+        .data_in_num = -1                                                       //Not used
+    };
 
-    /**
-     * @brief Data transfer between wifi mesh devices
-     */
-    if (config.mesh_type == MESH_ROOT) {
-        xTaskCreate(root_task, "root_task", 4 * 1024,
-                    NULL, CONFIG_MDF_TASK_DEFAULT_PRIOTY, NULL);
-    } else {
-        xTaskCreate(node_write_task, "node_write_task", 4 * 1024,
-                    NULL, CONFIG_MDF_TASK_DEFAULT_PRIOTY, NULL);
-        xTaskCreate(node_read_task, "node_read_task", 4 * 1024,
-                    NULL, CONFIG_MDF_TASK_DEFAULT_PRIOTY, NULL);
+    i2s_set_pin(0, &pin_config);
+
+    ESP_ERROR_CHECK(esp_bt_controller_mem_release(ESP_BT_MODE_BLE));
+
+    esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();
+    if ((err = esp_bt_controller_init(&bt_cfg)) != ESP_OK) {
+        ESP_LOGE(BT_AV_TAG, "%s initialize controller failed: %s\n", __func__, esp_err_to_name(err));
+        return;
     }
 
-    TimerHandle_t timer = xTimerCreate("print_system_info", 10000 / portTICK_RATE_MS,
-                                       true, NULL, print_system_info_timercb);
-    xTimerStart(timer, 0);
+    if ((err = esp_bt_controller_enable(ESP_BT_MODE_CLASSIC_BT)) != ESP_OK) {
+        ESP_LOGE(BT_AV_TAG, "%s enable controller failed: %s\n", __func__, esp_err_to_name(err));
+        return;
+    }
 
-    /* Bluetooth */
+    if ((err = esp_bluedroid_init()) != ESP_OK) {
+        ESP_LOGE(BT_AV_TAG, "%s initialize bluedroid failed: %s\n", __func__, esp_err_to_name(err));
+        return;
+    }
 
-   	//ESP_ERROR_CHECK( ret );
+    if ((err = esp_bluedroid_enable()) != ESP_OK) {
+        ESP_LOGE(BT_AV_TAG, "%s enable bluedroid failed: %s\n", __func__, esp_err_to_name(err));
+        return;
+    }
 
+    /* create application task */
+    bt_app_task_start_up();
+
+    /* Bluetooth device name, connection mode and profile set up */
+    bt_app_work_dispatch(bt_av_hdl_stack_evt, BT_APP_EVT_STACK_UP, NULL, 0, NULL);
+
+#if (CONFIG_BT_SSP_ENABLED == true)
+    /* Set default parameters for Secure Simple Pairing */
+    esp_bt_sp_param_t param_type = ESP_BT_SP_IOCAP_MODE;
+    esp_bt_io_cap_t iocap = ESP_BT_IO_CAP_IO;
+    esp_bt_gap_set_security_param(param_type, &iocap, sizeof(uint8_t));
+#endif
+
+    /*
+     * Set default parameters for Legacy Pairing
+     * Use fixed pin code
+     */
+    esp_bt_pin_type_t pin_type = ESP_BT_PIN_TYPE_FIXED;
+    esp_bt_pin_code_t pin_code;
+    pin_code[0] = '1';
+    pin_code[1] = '2';
+    pin_code[2] = '3';
+    pin_code[3] = '4';
+    esp_bt_gap_set_pin(pin_type, 4, pin_code);
 
 }
 
@@ -380,6 +407,10 @@ void bt_app_gap_cb(esp_bt_gap_cb_event_t event, esp_bt_gap_cb_param_t *param)
         break;
 #endif
 
+    case ESP_BT_GAP_MODE_CHG_EVT:
+        ESP_LOGI(BT_AV_TAG, "ESP_BT_GAP_MODE_CHG_EVT mode:%d", param->mode_chg.mode);
+        break;
+
     default: {
         ESP_LOGI(BT_AV_TAG, "event: %d", event);
         break;
@@ -387,7 +418,6 @@ void bt_app_gap_cb(esp_bt_gap_cb_event_t event, esp_bt_gap_cb_param_t *param)
     }
     return;
 }
-
 static void bt_av_hdl_stack_evt(uint16_t event, void *p_param)
 {
     ESP_LOGD(BT_AV_TAG, "%s evt %d", __func__, event);

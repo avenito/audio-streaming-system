@@ -94,7 +94,40 @@ bt_app_core.o: /home/venito/ASS/audio-streaming-system/main/bt_app_core.c \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/gpio_types.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/gpio.h \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/adc_types.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h \
+ /home/venito/ASS/audio-streaming-system/main/ASS.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/opt.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/lwipopts.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/time.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/time.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/ioctl.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_task.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/netif/dhcp_state.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/debug.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/arch.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/cc.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/errno.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/sys_arch.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/vfs_lwip.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/poll.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip_addr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip6_zone.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netif.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/err.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/pbuf.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/stats.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/mem.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/memp.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_std.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_priv.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/priv/mem_priv.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/errno.h
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_api.h:
 
@@ -287,4 +320,70 @@ bt_app_core.o: /home/venito/ASS/audio-streaming-system/main/bt_app_core.c \
 /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/adc_types.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
+
+/home/venito/ASS/audio-streaming-system/main/ASS.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/opt.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/lwipopts.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/time.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/time.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/ioctl.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_task.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/netif/dhcp_state.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/debug.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/arch.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/cc.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/errno.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/sys_arch.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/vfs_lwip.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/poll.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip_addr.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/def.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip6_addr.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/def.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip6_zone.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netif.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/err.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/pbuf.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/stats.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/mem.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/memp.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_std.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_priv.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/priv/mem_priv.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/inet.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/errno.h:
 /home/venito/ASS/audio-streaming-system/main/./bt_app_core.c:

@@ -18,6 +18,9 @@
 #include "bt_app_core.h"
 #include "driver/i2s.h"
 #include "freertos/ringbuf.h"
+#include "ASS.h"
+#include "lwip/sockets.h"
+
 
 static void bt_app_task_handler(void *arg);
 static bool bt_app_send_msg(bt_app_msg_t *msg);
@@ -157,9 +160,10 @@ void bt_i2s_task_shut_down(void)
 
 size_t write_ringbuf(const uint8_t *data, size_t size)
 {
+	int err;
     BaseType_t done = xRingbufferSend(s_ringbuf_i2s, (void *)data, size, (portTickType)portMAX_DELAY);
     if(done){
-        return size;
+    	return size;
     } else {
         return 0;
     }

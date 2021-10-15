@@ -1,18 +1,8 @@
 main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
- /home/venito/esp/esp-mdf/components/mcommon/include/mdf_common.h \
- /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/errno.h \
- /home/venito/ASS/audio-streaming-system/build/include/sdkconfig.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/rtc.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_assert.h \
- /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_compiler.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_bit_defs.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/crc.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_compiler.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/FreeRTOSConfig.h \
+ /home/venito/ASS/audio-streaming-system/build/include/sdkconfig.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_config.h \
  /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/hal.h \
  /home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/core.h \
@@ -24,6 +14,7 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtensa_context.h \
  /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/corebits.h \
  /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp_rom_sys.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/projdefs.h \
@@ -38,6 +29,7 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_err.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_system.h \
  /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/esp_attr.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_bit_defs.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_idf_version.h \
  /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/esp_newlib.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_hw_support/include/soc/spinlock.h \
@@ -49,6 +41,8 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/cpu_ll.h \
  /home/venito/esp/esp-mdf/esp-idf/components/xtensa/esp32/include/xtensa/config/extreg.h \
  /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/soc_memory_layout.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_assert.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_hw_support/include/soc/compare_set.h \
  /home/venito/esp/esp-mdf/esp-idf/components/heap/include/esp_heap_caps.h \
  /home/venito/esp/esp-mdf/esp-idf/components/heap/include/multi_heap.h \
@@ -58,13 +52,16 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/portbenchmark.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/portmacro_priv.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/mpu_wrappers.h \
- /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/list.h \
- /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h \
- /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/timers.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/event_groups.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/timers.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs_flash.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h \
  /home/venito/esp/esp-mdf/esp-idf/components/spi_flash/include/esp_partition.h \
  /home/venito/esp/esp-mdf/esp-idf/components/spi_flash/include/esp_flash.h \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/spi_flash_types.h \
@@ -72,15 +69,61 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/esp_flash_err.h \
  /home/venito/esp/esp-mdf/esp-idf/components/spi_flash/include/esp_spi_flash.h \
  /home/venito/esp/esp-mdf/esp-idf/components/spi_flash/include/esp_spi_flash_counters.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log_internal.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/include/esp32/include/esp_bt.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_task.h \
+ /home/venito/ASS/audio-streaming-system/main/bt_app_core.h \
+ /home/venito/ASS/audio-streaming-system/main/bt_app_av.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_a2dp_api.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_defs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_avrc_api.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_main.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_device.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_gap_bt_api.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/i2s.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/semphr.h \
  /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_legacy.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/i2s_periph.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/i2s_struct.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/i2s_reg.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/rtc_periph.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/rtc_io_periph.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_channel.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_reg.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_struct.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_cntl_struct.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/sens_struct.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2s_hal.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/i2s_ll.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/efuse_periph.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/efuse_reg.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2s_types.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/periph_ctrl.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_intr_alloc.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/driver/esp32/include/driver/adc.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/adc_common.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/gpio.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/gpio_periph.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_struct.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_reg.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/gpio_types.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/gpio.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/adc_types.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_types.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/esp_wifi_types_private.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_interface.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_legacy.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_types.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_netif/include/esp_netif.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_netif/include/esp_netif_ip_addr.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_netif/include/esp_netif_types.h \
@@ -98,11 +141,11 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/time.h \
  /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/time.h \
  /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/ioctl.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_task.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/netif/dhcp_state.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/debug.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/arch.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/cc.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/errno.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/sys_arch.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/vfs_lwip.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/def.h \
@@ -112,12 +155,15 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/ip6_zone.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/include/apps/dhcpserver/dhcpserver.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_netif/include/esp_netif_sta_list.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_http_client/include/esp_http_client.h \
- /home/venito/esp/esp-mdf/esp-idf/components/nghttp/port/include/http_parser.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/esp_wifi_private.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_crypto_types.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/wifi_os_adapter.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_default.h \
+ /home/venito/ASS/audio-streaming-system/main/protocol_examples_common.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/err.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h \
  /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/poll.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netif.h \
- /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/err.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/pbuf.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/stats.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/mem.h \
@@ -127,105 +173,16 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/priv/mem_priv.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/errno.h \
- /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netdb.h \
- /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h \
- /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs_flash.h \
- /home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h \
- /home/venito/esp/esp-mdf/esp-idf/components/json/cJSON/cJSON.h \
- /home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/i2c.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_intr_alloc.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h \
- /home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/gpio.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/gpio_periph.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_struct.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_reg.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h \
- /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/gpio_types.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/gpio.h \
- /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2c_types.h \
- /home/venito/esp/esp-mdf/components/mcommon/include/mdf_err.h \
- /home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log.h \
- /home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log_internal.h \
- /home/venito/esp/esp-mdf/components/mcommon/include/mdf_mem.h \
- /home/venito/esp/esp-mdf/components/mcommon/include/mdf_event_loop.h \
- /home/venito/esp/esp-mdf/components/mcommon/include/mdf_info_store.h \
- /home/venito/esp/esp-mdf/components/mcommon/include/mdf_common.h \
- /home/venito/esp/esp-mdf/components/mwifi/include/mwifi.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_mesh.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_types.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/esp_wifi_private.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_crypto_types.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/wifi_os_adapter.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_default.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_mesh_internal.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_mesh.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/wifi.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_smartconfig.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/wifi_types.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_crypto_types.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_mesh_internal.h \
- /home/venito/esp/esp-mdf/esp-idf/components/bt/include/esp32/include/esp_bt.h \
- /home/venito/ASS/audio-streaming-system/main/bt_app_core.h \
- /home/venito/ASS/audio-streaming-system/main/bt_app_av.h \
- /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_a2dp_api.h \
- /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_defs.h \
- /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_avrc_api.h \
- /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_main.h \
- /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_device.h \
- /home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_gap_bt_api.h \
- /home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/i2s.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/i2s_periph.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/i2s_struct.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/i2s_reg.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/rtc_periph.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/rtc_io_periph.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_channel.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_reg.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_struct.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_cntl_struct.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/sens_struct.h \
- /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2s_hal.h \
- /home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/i2s_ll.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/efuse_periph.h \
- /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/efuse_reg.h \
- /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2s_types.h \
- /home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/periph_ctrl.h \
- /home/venito/esp/esp-mdf/esp-idf/components/driver/esp32/include/driver/adc.h \
- /home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/adc_common.h \
- /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/adc_types.h
-
-/home/venito/esp/esp-mdf/components/mcommon/include/mdf_common.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/errno.h:
-
-/home/venito/ASS/audio-streaming-system/build/include/sdkconfig.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/rtc.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/ets_sys.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_assert.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_compiler.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_bit_defs.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/crc.h:
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sys.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netdb.h
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_compiler.h:
+
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/FreeRTOSConfig.h:
+
+/home/venito/ASS/audio-streaming-system/build/include/sdkconfig.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_config.h:
 
@@ -248,6 +205,8 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/corebits.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/xtensa/xtruntime-frames.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/assert.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp_rom_sys.h:
 
@@ -277,6 +236,8 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 
 /home/venito/esp/esp-mdf/esp-idf/components/xtensa/include/esp_attr.h:
 
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_bit_defs.h:
+
 /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_idf_version.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/esp_newlib.h:
@@ -299,6 +260,10 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 
 /home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/soc_memory_layout.h:
 
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/soc.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_assert.h:
+
 /home/venito/esp/esp-mdf/esp-idf/components/esp_hw_support/include/soc/compare_set.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/heap/include/esp_heap_caps.h:
@@ -317,19 +282,25 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/mpu_wrappers.h:
 
-/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h:
-
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/list.h:
 
-/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/timers.h:
-
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/event_groups.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/timers.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/task.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs_flash.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/spi_flash/include/esp_partition.h:
 
@@ -345,15 +316,99 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 
 /home/venito/esp/esp-mdf/esp-idf/components/spi_flash/include/esp_spi_flash_counters.h:
 
-/home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event.h:
+/home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log_internal.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/include/esp32/include/esp_bt.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_task.h:
+
+/home/venito/ASS/audio-streaming-system/main/bt_app_core.h:
+
+/home/venito/ASS/audio-streaming-system/main/bt_app_av.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_a2dp_api.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_defs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_avrc_api.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_main.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_device.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_gap_bt_api.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/i2s.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/semphr.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/queue.h:
 
-/home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h:
+/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/i2s_periph.h:
 
-/home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_legacy.h:
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/i2s_struct.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/i2s_reg.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/rtc_periph.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/rtc_io_periph.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_channel.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_reg.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_struct.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_cntl_reg.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_cntl_struct.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/sens_struct.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2s_hal.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/i2s_ll.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/efuse_periph.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/efuse_reg.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2s_types.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/periph_ctrl.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_intr_alloc.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/driver/esp32/include/driver/adc.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/adc_common.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/gpio.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/gpio_periph.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_struct.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_reg.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/gpio_types.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/gpio.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/adc_types.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_types.h:
 
@@ -362,6 +417,14 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_interface.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_base.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_event/include/esp_event_legacy.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_types.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_netif/include/esp_netif.h:
 
@@ -397,8 +460,6 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 
 /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/ioctl.h:
 
-/home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_task.h:
-
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/netif/dhcp_state.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/debug.h:
@@ -406,6 +467,8 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/arch.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/cc.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/errno.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/arch/sys_arch.h:
 
@@ -425,17 +488,23 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_netif/include/esp_netif_sta_list.h:
 
-/home/venito/esp/esp-mdf/esp-idf/components/esp_http_client/include/esp_http_client.h:
+/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/esp_wifi_private.h:
 
-/home/venito/esp/esp-mdf/esp-idf/components/nghttp/port/include/http_parser.h:
+/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_crypto_types.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/wifi_os_adapter.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_default.h:
+
+/home/venito/ASS/audio-streaming-system/main/protocol_examples_common.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/err.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/newlib/platform_include/sys/poll.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netif.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/err.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/pbuf.h:
 
@@ -455,145 +524,7 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/errno.h:
 
+/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sys.h:
+
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netdb.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs_flash.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/nvs_flash/include/nvs.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/json/cJSON/cJSON.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/i2c.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_intr_alloc.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/gpio.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/gpio_periph.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/io_mux_reg.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_struct.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_reg.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/gpio_sig_map.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/gpio_types.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/gpio.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2c_types.h:
-
-/home/venito/esp/esp-mdf/components/mcommon/include/mdf_err.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log_internal.h:
-
-/home/venito/esp/esp-mdf/components/mcommon/include/mdf_mem.h:
-
-/home/venito/esp/esp-mdf/components/mcommon/include/mdf_event_loop.h:
-
-/home/venito/esp/esp-mdf/components/mcommon/include/mdf_info_store.h:
-
-/home/venito/esp/esp-mdf/components/mcommon/include/mdf_common.h:
-
-/home/venito/esp/esp-mdf/components/mwifi/include/mwifi.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_mesh.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_types.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/esp_wifi_private.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_crypto_types.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/wifi_os_adapter.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_default.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_mesh_internal.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_mesh.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/wifi.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_smartconfig.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_private/wifi_types.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_wifi_crypto_types.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_mesh_internal.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/bt/include/esp32/include/esp_bt.h:
-
-/home/venito/ASS/audio-streaming-system/main/bt_app_core.h:
-
-/home/venito/ASS/audio-streaming-system/main/bt_app_av.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_a2dp_api.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_defs.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_avrc_api.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_main.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_bt_device.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/bt/host/bluedroid/api/include/api/esp_gap_bt_api.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/i2s.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/i2s_periph.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/i2s_struct.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/i2s_reg.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/rtc_periph.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/rtc_io_periph.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_channel.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_reg.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_io_struct.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc_cntl_struct.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/sens_struct.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2s_hal.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/i2s_ll.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/rtc.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/include/soc/efuse_periph.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/efuse_reg.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/i2s_types.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/periph_ctrl.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/driver/esp32/include/driver/adc.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/driver/include/driver/adc_common.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/adc_types.h:
 /home/venito/ASS/audio-streaming-system/main/./main.c:
