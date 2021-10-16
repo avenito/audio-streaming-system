@@ -1,23 +1,5 @@
 menu "ASS Configuration"
 
-choice EXAMPLE_A2DP_SINK_OUTPUT
-    prompt "A2DP Sink Output"
-    default EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
-    help
-        Select to use Internal DAC or external I2S driver
-
-    config EXAMPLE_A2DP_SINK_OUTPUT_INTERNAL_DAC
-        bool "Internal DAC"
-        help
-            Select this to use Internal DAC sink output
-
-    config EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
-        bool "External I2S Codec"
-        help
-            Select this to use External I2S sink output
-
-endchoice
-    
 choice DEVICE_TYPE
     bool "Configure the device type"
     default DEVICE_TYPE_NODE
@@ -25,9 +7,10 @@ choice DEVICE_TYPE
         Configure the device type
 
 config DEVICE_TYPE_ROOT
-   bool "Root device"
+   bool "Central device"
 config DEVICE_TYPE_NODE
-   bool "Non-Root device"
+   bool "Node device"
+   
 endchoice
 
 config DEVICE_TYPE
@@ -35,33 +18,74 @@ config DEVICE_TYPE
     default 1 if DEVICE_TYPE_ROOT
     default 2 if DEVICE_TYPE_NODE
 
-config EXAMPLE_PORT
+config CENTRAL_NAME
+    string "BT Central name"
+    default "ASS Central"
+    depends on DEVICE_TYPE_ROOT
+    help
+        Name that will be detected as BT device.
+
+config BT_NODE_NAME
+    string "BT Node name"
+    default "my BT Lound speaker"
+    depends on DEVICE_TYPE_NODE
+    help
+        BT device name that will be detected by the node.
+
+config ESP_WIFI_SSID
+    string "WiFi SSID"
+    default "ssid"
+    help
+        SSID (network name) for the device to connect to.
+
+config ESP_WIFI_PASS
+    string "WiFi Password"
+    default "password"
+    help
+        WiFi password, WPA or WPA2.
+
+config ESP_PORT
     int "Port"
     range 0 65535
     default 3333
     help
-        Local port the example server will listen on.
+        Local port the devide will listen on.
 
-config EXAMPLE_I2S_LRCK_PIN
+choice A2DP_SINK_OUTPUT
+    prompt "I2S Output"
+    default A2DP_SINK_OUTPUT_EXTERNAL_I2S
+    help
+        Select I2S pins
+
+    config A2DP_SINK_OUTPUT_EXTERNAL_I2S
+        bool "External I2S Codec"
+        help
+            Select I2S pins
+    config A2DP_SINK_NO_OUTPUT
+        bool "No audio output"
+        help
+            Select this there is no external I2S device.
+endchoice
+
+config I2S_LRCK_PIN
     int "I2S LRCK (WS) GPIO"
     default 22
-    depends on EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
+    depends on A2DP_SINK_OUTPUT_EXTERNAL_I2S
     help
         GPIO number to use for I2S LRCK(WS) Driver.
 
-config EXAMPLE_I2S_BCK_PIN
+config I2S_BCK_PIN
     int "I2S BCK GPIO"
     default 26
-    depends on EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
+    depends on A2DP_SINK_OUTPUT_EXTERNAL_I2S
     help
         GPIO number to use for I2S BCK Driver.
 
-config EXAMPLE_I2S_DATA_PIN
+config I2S_DATA_PIN
     int "I2S DATA GPIO"
     default 25
-    depends on EXAMPLE_A2DP_SINK_OUTPUT_EXTERNAL_I2S
+    depends on A2DP_SINK_OUTPUT_EXTERNAL_I2S
     help
         GPIO number to use for I2S Data Driver.
-
 
 endmenu

@@ -95,7 +95,6 @@ bt_app_core.o: /home/venito/ASS/audio-streaming-system/main/bt_app_core.c \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/gpio.h \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/adc_types.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h \
- /home/venito/ASS/audio-streaming-system/main/ASS.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/opt.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/port/esp32/include/lwipopts.h \
@@ -320,8 +319,6 @@ bt_app_core.o: /home/venito/ASS/audio-streaming-system/main/bt_app_core.c \
 /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/adc_types.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_ringbuf/include/freertos/ringbuf.h:
-
-/home/venito/ASS/audio-streaming-system/main/ASS.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sockets.h:
 

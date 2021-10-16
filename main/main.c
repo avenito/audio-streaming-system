@@ -49,9 +49,9 @@
 #include "lwip/sys.h"
 #include <lwip/netdb.h>
 
-#define ESP_PORT		   3333//CONFIG_EXAMPLE_PORT
-#define ESP_WIFI_SSID      "VIRUS"//CONFIG_ESP_WIFI_SSID
-#define ESP_WIFI_PASS      "h1y2g3k5"//CONFIG_ESP_WIFI_PASSWORD
+#define ESP_PORT		   CONFIG_ESP_PORT
+#define ESP_WIFI_SSID      CONFIG_ESP_WIFI_SSID
+#define ESP_WIFI_PASS      CONFIG_ESP_WIFI_PASS
 #define ESP_MAXIMUM_RETRY  3//CONFIG_ESP_MAXIMUM_RETRY
 #define HOST_IP_ADDR	   "192.168.178.255"
 
@@ -305,7 +305,7 @@ void app_main(void)
 
     xTaskCreate(udp_server_task, "udp_server", 12 * 1024 , (void*)AF_INET, 5, NULL);
 
-    // Starts BlueTooth configuration
+    // Starts I2S configuration
 
     i2s_config_t i2s_config = {
 
@@ -323,13 +323,15 @@ void app_main(void)
 
     i2s_driver_install(0, &i2s_config, 0, NULL);
     i2s_pin_config_t pin_config = {
-        .bck_io_num = CONFIG_EXAMPLE_I2S_BCK_PIN,
-        .ws_io_num = CONFIG_EXAMPLE_I2S_LRCK_PIN,
-        .data_out_num = CONFIG_EXAMPLE_I2S_DATA_PIN,
+        .bck_io_num = CONFIG_I2S_BCK_PIN,
+        .ws_io_num = CONFIG_I2S_LRCK_PIN,
+        .data_out_num = CONFIG_I2S_DATA_PIN,
         .data_in_num = -1                                                       //Not used
     };
 
     i2s_set_pin(0, &pin_config);
+
+    // Starts BlueTooth configuration
 
     ESP_ERROR_CHECK(esp_bt_controller_mem_release(ESP_BT_MODE_BLE));
 
@@ -424,7 +426,7 @@ static void bt_av_hdl_stack_evt(uint16_t event, void *p_param)
     switch (event) {
     case BT_APP_EVT_STACK_UP: {
         /* set up device name */
-        char *dev_name = "ESP_SPEAKER";
+        char *dev_name = CONFIG_CENTRAL_NAME;
         esp_bt_dev_set_device_name(dev_name);
 
         esp_bt_gap_register_callback(bt_app_gap_cb);

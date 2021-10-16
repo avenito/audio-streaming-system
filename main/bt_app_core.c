@@ -18,7 +18,6 @@
 #include "bt_app_core.h"
 #include "driver/i2s.h"
 #include "freertos/ringbuf.h"
-#include "ASS.h"
 #include "lwip/sockets.h"
 
 
