@@ -49,22 +49,26 @@
 #include "lwip/sys.h"
 #include <lwip/netdb.h>
 
-#define ESP_PORT		   CONFIG_ESP_PORT
-#define ESP_WIFI_SSID      CONFIG_ESP_WIFI_SSID
-#define ESP_WIFI_PASS      CONFIG_ESP_WIFI_PASS
-#define ESP_MAXIMUM_RETRY  3//CONFIG_ESP_MAXIMUM_RETRY
-#define HOST_IP_ADDR	   "192.168.178.255"
+#include "ASS.h"
+
+#define ESP_PORT		   	CONFIG_ESP_PORT
+#define ESP_WIFI_SSID      	CONFIG_ESP_WIFI_SSID
+#define ESP_WIFI_PASS      	CONFIG_ESP_WIFI_PASS
+#define ESP_MAXIMUM_RETRY  	3
+#define	MAX_UDP_PACKAGE		8 * 1024//1450
 
 /* DEBUG */
-#define DEBUG
+//#define DEBUG
 static const char 			*TAG = "UDP_SERVER";
 
 
 /* FreeRTOS event group to signal when we are connected*/
 static EventGroupHandle_t s_wifi_event_group;
-
 static int s_retry_num = 0;
-
+RingbufHandle_t s_ringbuf_wifi = NULL;
+extern RingbufHandle_t s_ringbuf_i2s;
+char rx_buffer[8 * 1024];
+const StaticTask_t *task_tra_udp;
 
 /* The event group allows multiple bits for each event, but we only care about two events:
  * - we are connected to the AP with an IP
@@ -72,11 +76,12 @@ static int s_retry_num = 0;
 #define WIFI_CONNECTED_BIT BIT0
 #define WIFI_FAIL_BIT      BIT1
 
-static RingbufHandle_t s_ringbuf_wifi = NULL;
 static struct sockaddr_in local_addr;
 static struct sockaddr_in origin_addr;
-int8_t	broadcast_msg = 0;
+int8_t		broadcast_msg = 0;
+uint32_t	broadcast_addr;
 int sock;
+
 
 
 /* event for handler "bt_av_hdl_stack_up */
@@ -107,6 +112,8 @@ static void event_handler(void* arg, esp_event_base_t event_base,
     } else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
         ESP_LOGI(TAG, "got ip:" IPSTR, IP2STR(&event->ip_info.ip));
+        broadcast_addr = event->ip_info.ip.addr | 0xFF000000;
+        ESP_LOGI(TAG, "broadcast ip: %s:", inet_ntoa(broadcast_addr));
         s_retry_num = 0;
         xEventGroupSetBits(s_wifi_event_group, WIFI_CONNECTED_BIT);
     }
@@ -184,33 +191,65 @@ void wifi_init_sta(void)
     vEventGroupDelete(s_wifi_event_group);
 }
 
-static void udp_tra_task(void)
+static void udp_tra_task(void *arg)
 {
 
 
-	size_t item_size = 0;
+	size_t item_size = 0, send = 0;
+	int sent = 0, to_send;
 	int err;
+	uint32_t s_pkt_cnt = 0;
 
 	while (1) {
 
 
 		uint8_t *data = (uint8_t *)xRingbufferReceive(s_ringbuf_wifi, &item_size, (portTickType)portMAX_DELAY);
+		//ESP_LOGI(TAG, "Audio packet received to send by UDP, size: %d, %s", item_size, (char *)data);
 
 #ifdef DEBUG
-		ESP_LOGI(TAG, "Data received from ringbuffer. Item_size = %d, sock = %d", item_size, sock);
+		if (++s_pkt_cnt % 100 == 0) {
+		        ESP_LOGI(TAG, "Audio packet received to send by UDP %u, size: %d", s_pkt_cnt, item_size);
+		    }
 #endif
 
 		if (broadcast_msg) {
-			origin_addr.sin_addr.s_addr |= 0xFF000000;
+			origin_addr.sin_addr.s_addr = broadcast_addr;
 			origin_addr.sin_port = htons(ESP_PORT);
+			broadcast_msg = 0;
 		}
 
         if (item_size != 0){
-			err = sendto(sock, data, item_size, 0, (struct sockaddr *)&origin_addr, sizeof(origin_addr));
-			if (err < 0) {
-				ESP_LOGE(TAG, "Error occurred during sending: errno %d", errno);
-				break;
-			}
+        	to_send = item_size;
+        	sent = 0;
+        	while(sent < item_size){
+        		if(to_send > MAX_UDP_PACKAGE){
+        			send = MAX_UDP_PACKAGE;
+        		} else {
+        			send = to_send;
+        		}
+#ifdef DEBUG
+        		ESP_LOGI(TAG, "item_size: %d", item_size);
+        		ESP_LOGI(TAG, "to_send: %d", to_send);
+        		ESP_LOGI(TAG, "send: %d", send);
+        		ESP_LOGI(TAG, "sent: %d", sent);
+        		ESP_LOGI(TAG, "Cont.: %s", (data+sent));
+        		ESP_LOGI(TAG, "ip: %s:", inet_ntoa(origin_addr.sin_addr.s_addr));
+        		ESP_LOGI(TAG, "origin_addr.sin_addr.s_addr: %d", origin_addr.sin_addr.s_addr);
+        		ESP_LOGI(TAG, "origin_addr.sin_family: %d", origin_addr.sin_family);
+        		ESP_LOGI(TAG, "origin_addr.sin_len: %d", origin_addr.sin_len);
+        		ESP_LOGI(TAG, "origin_addr.sin_port: %d", origin_addr.sin_port);
+        		ESP_LOGI(TAG, "origin_addr.sin_zero: %s", origin_addr.sin_zero);
+#endif
+				err = sendto(sock, (data + sent), send, 0, (struct sockaddr *)&origin_addr, sizeof(origin_addr));
+				++s_pkt_cnt;
+        		//err = sendto(sock, msg, sizeof(msg), 0, (struct sockaddr *)&origin_addr, sizeof(origin_addr));
+				if (err < 0) {
+					ESP_LOGE(TAG, "Error occurred during sending: errno %d, pack %d", errno, s_pkt_cnt);
+					break;
+				}
+				sent += send;
+				to_send -= send;
+        	}
 			vRingbufferReturnItem(s_ringbuf_wifi,(void *)data);
 		}
 	}
@@ -218,32 +257,43 @@ static void udp_tra_task(void)
 	vTaskDelete(NULL);
 }
 
-static void udp_server_task(void *pvParameters)
+static void udp_server_task(void *arg)
 {
-    char rx_buffer[8 * 1024];
     char addr_str[128];
-    int addr_family = (int)pvParameters;
-    int ip_protocol = 0;
+    char *rx_buff = &rx_buffer[0];
+    int addr_family = AF_INET;
+    int ip_protocol = 0, s_pkt_cnt = 0;;
     BaseType_t done;
+    TaskHandle_t xSendUDP = NULL;
+
+    s_ringbuf_wifi = xRingbufferCreate(8 * 1024, RINGBUF_TYPE_BYTEBUF);
+	if(s_ringbuf_wifi == NULL){
+		ESP_LOGE(TAG, "Cannot create WiFi ringbuffer!!!");
+	} else {
+		ESP_LOGI(TAG, "s_ringbuf_wifi: %u",(uint) s_ringbuf_wifi);
+	}
 
     while (1) {
 
     	local_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    	origin_addr.sin_addr.s_addr = broadcast_addr;
     	local_addr.sin_family = AF_INET;
+    	origin_addr.sin_family = AF_INET;
     	local_addr.sin_port = htons(ESP_PORT);
+    	origin_addr.sin_port = htons(ESP_PORT);
 		ip_protocol = IPPROTO_IP;
-
-	    s_ringbuf_wifi = xRingbufferCreate(8 * 1024, RINGBUF_TYPE_BYTEBUF);
-		if(s_ringbuf_wifi == NULL){
-			ESP_LOGE(TAG, "Cannot create WiFi ringbuffer!!!");
-		    break;
-		}
 
 		sock = socket(addr_family, SOCK_DGRAM, ip_protocol);
 		if (sock < 0) {
             ESP_LOGE(TAG, "Unable to create socket.");
             break;
         }
+//		int bc = 1;
+//		if (setsockopt(sock, SOL_SOCKET, SO_BROADCAST, &bc, sizeof(bc)) < 0) {
+//		    ESP_LOGE(TAG, "Failed to set sock options: errno %d", errno);
+//		    closesocket(sock);
+//		    break;
+//		}
 
         ESP_LOGI(TAG, "Socket created");
 
@@ -253,13 +303,17 @@ static void udp_server_task(void *pvParameters)
         }
         ESP_LOGI(TAG, "Socket bound, port %d", ESP_PORT);
 
-        xTaskCreate(udp_tra_task, "udp_trans", 4096, 0, 5, NULL);
+        xTaskCreatePinnedToCore(udp_tra_task, "udp_trans", 12 * 1024, NULL, configMAX_PRIORITIES - 3, &xSendUDP, 1);
 
         while (1) {
 
-            ESP_LOGI(TAG, "Waiting for data ...");
+            //ESP_LOGI(TAG, "Waiting for data ...");
             socklen_t socklen = sizeof(origin_addr);
-            int len = recvfrom(sock, rx_buffer, sizeof(rx_buffer) - 1, 0, (struct sockaddr *)&origin_addr, &socklen);
+            size_t len = recvfrom(sock, rx_buff, sizeof(rx_buffer) - 1, 0, (struct sockaddr *)&origin_addr, &socklen);
+            //ESP_LOGI(TAG, "Received on port %d, --> %s", ESP_PORT, rx_buffer);
+            if (++s_pkt_cnt % 100 == 0) {
+    		        ESP_LOGI(BT_AV_TAG, ".");
+    		    }
             // Error occurred during receiving
             if (len < 0) {
                 ESP_LOGE(TAG, "recvfrom failed.");
@@ -269,11 +323,16 @@ static void udp_server_task(void *pvParameters)
             else {
                 // Get the sender's ip address as string
                 inet_ntoa_r(((struct sockaddr_in *)&origin_addr)->sin_addr, addr_str, sizeof(addr_str) - 1);
-                rx_buffer[len] = 0; // Null-terminate whatever we received and treat like a string...
+                //rx_buffer[len] = 0; // Null-terminate whatever we received and treat like a string...
 #ifdef DEBUG
                 ESP_LOGI(TAG, "Received %d bytes from %s:", len, inet_ntoa(origin_addr.sin_addr.s_addr));
 #endif
-                done = xRingbufferSend(s_ringbuf_wifi, (char *)rx_buffer, len, (portTickType)portMAX_DELAY);
+#if (A2DP_SINK_OUTPUT_EXTERNAL_I2S == TRUE)
+
+
+                done = xRingbufferSend(s_ringbuf_i2s, (void *) rx_buff, len, (portTickType)portMAX_DELAY);
+        		ESP_LOGI(TAG, "s_ringbuf_i2s done: %u, len: %d", done, len);
+#endif
 #ifdef DEBUG
                 ESP_LOGI(TAG, "Done %d", done);
 #endif
@@ -303,7 +362,7 @@ void app_main(void)
 
     wifi_init_sta();
 
-    xTaskCreate(udp_server_task, "udp_server", 12 * 1024 , (void*)AF_INET, 5, NULL);
+    xTaskCreate(udp_server_task, "udp_server", 4 * 1024 , NULL, configMAX_PRIORITIES - 3, NULL);
 
     // Starts I2S configuration
 
@@ -330,6 +389,17 @@ void app_main(void)
     };
 
     i2s_set_pin(0, &pin_config);
+
+	if (s_ringbuf_i2s == NULL){
+		s_ringbuf_i2s = xRingbufferCreate(8 * 1024, RINGBUF_TYPE_BYTEBUF);
+
+	    if(s_ringbuf_i2s == NULL){
+	        return;
+	    } else {
+			ESP_LOGI(TAG, "s_ringbuf_i2s: %u",(uint) s_ringbuf_i2s);
+	    }
+	}
+
 
     // Starts BlueTooth configuration
 

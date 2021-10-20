@@ -174,7 +174,8 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/errno.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sys.h \
- /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netdb.h
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netdb.h \
+ /home/venito/ASS/audio-streaming-system/main/ASS.h
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
 
@@ -527,4 +528,6 @@ main.o: /home/venito/ASS/audio-streaming-system/main/main.c \
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sys.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/netdb.h:
+
+/home/venito/ASS/audio-streaming-system/main/ASS.h:
 /home/venito/ASS/audio-streaming-system/main/./main.c:
