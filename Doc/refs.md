@@ -5,4 +5,5 @@
 [3](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/kconfig.html#config-esp32-wifi-sw-coexist-enable)
 ### Broadcast msg
 [1](https://www.esp32.com/viewtopic.php?t=6887), [lwIP](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/lwip.html), [Memory Management](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/wifi.html), [lwIP Optimization](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/lwip.html#lwip-performance)
-
+### Tools
+[Program's size](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/performance/size.html#idf-py-size)
