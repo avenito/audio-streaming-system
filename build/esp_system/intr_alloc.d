@@ -61,7 +61,8 @@ intr_alloc.o: \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_intr_alloc.h \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/interrupt_controller_hal.h \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/interrupt_controller_types.h \
- /home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/interrupt_controller_ll.h
+ /home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/interrupt_controller_ll.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_ipc/include/esp_ipc.h
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_common/include/esp_types.h:
 
@@ -186,4 +187,6 @@ intr_alloc.o: \
 /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/interrupt_controller_types.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/hal/esp32/include/hal/interrupt_controller_ll.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_ipc/include/esp_ipc.h:
 /home/venito/esp/esp-mdf/esp-idf/components/esp_system/./intr_alloc.c:

@@ -72,6 +72,7 @@ gpio.o: /home/venito/esp/esp-mdf/esp-idf/components/driver/gpio.c \
  /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/sens_struct.h \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/rtc_io_types.h \
  /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_ipc/include/esp_ipc.h \
  /home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log.h \
  /home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log_internal.h \
  /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/gpio_hal.h \
@@ -224,6 +225,8 @@ gpio.o: /home/venito/esp/esp-mdf/esp-idf/components/driver/gpio.c \
 /home/venito/esp/esp-mdf/esp-idf/components/hal/include/hal/rtc_io_types.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/periph_defs.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_ipc/include/esp_ipc.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/log/include/esp_log.h:
 

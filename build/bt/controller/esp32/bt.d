@@ -83,7 +83,8 @@ controller/esp32/bt.o: \
  /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/periph_defs.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp32/include/esp32/clk.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_coexist_internal.h \
- /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_coexist_adapter.h
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_coexist_adapter.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_ipc/include/esp_ipc.h
 
 /home/venito/ASS/audio-streaming-system/build/include/sdkconfig.h:
 
@@ -252,4 +253,6 @@ controller/esp32/bt.o: \
 /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_coexist_internal.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_wifi/include/esp_coexist_adapter.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_ipc/include/esp_ipc.h:
 /home/venito/esp/esp-mdf/esp-idf/components/bt/controller/esp32/bt.c:

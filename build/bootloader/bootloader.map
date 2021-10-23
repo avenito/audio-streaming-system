@@ -216,8 +216,8 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .text.bootloader_configure_spi_pins
                 0x0000000000000000      0x16f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
- .xt.lit        0x0000000000000000       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
- .xt.prop       0x0000000000000000      0x150 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+ .xt.lit        0x0000000000000000       0x18 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+ .xt.prop       0x0000000000000000      0x198 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .text          0x0000000000000000        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
  .data          0x0000000000000000        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
  .bss           0x0000000000000000        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
@@ -652,7 +652,7 @@ LOAD /home/venito/.espressif/tools/xtensa-esp32-elf/esp-2020r3-8.4.0/xtensa-esp3
 END GROUP
 
 .iram_loader.text
-                0x0000000040078000     0x37b8
+                0x0000000040078000     0x37b4
                 0x0000000040078000                . = ALIGN (0x10)
                 0x0000000040078000                _loader_text_start = ABSOLUTE (.)
  *(.stub .gnu.warning .gnu.linkonce.literal.* .gnu.linkonce.t.*.literal .gnu.linkonce.t.*)
@@ -767,590 +767,590 @@ END GROUP
                 0x00000000400782d8       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                          0x14 (size before relaxing)
  .literal.verify_load_addresses
-                0x00000000400782e8       0x7c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
-                                         0xa0 (size before relaxing)
+                0x00000000400782e8       0x78 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                                         0x9c (size before relaxing)
  .literal.should_load
-                0x0000000040078364        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x0000000040078360        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                          0x28 (size before relaxing)
  .literal.process_segment
-                0x0000000040078368       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x0000000040078364       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                          0x90 (size before relaxing)
  .literal.image_load
-                0x0000000040078390       0x34 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x000000004007838c       0x34 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                          0xec (size before relaxing)
  .literal.bootloader_load_image
-                0x00000000400783c4        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x00000000400783c0        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                           0x4 (size before relaxing)
  .literal.esp_partition_table_verify
-                0x00000000400783c4       0x2c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
+                0x00000000400783c0       0x2c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
                                          0x54 (size before relaxing)
  .literal.esp_rom_spiflash_read_status
-                0x00000000400783f0       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000400783ec       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x14 (size before relaxing)
  .literal.esp_rom_spiflash_wait_idle
-                0x0000000040078400        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000400783fc        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                           0xc (size before relaxing)
  .literal.esp_rom_spiflash_enable_write$constprop$7
-                0x0000000040078408        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x0000000040078404        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x14 (size before relaxing)
  .literal.esp_rom_spiflash_program_page_internal$constprop$5
-                0x000000004007840c        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x0000000040078408        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x24 (size before relaxing)
  .literal.esp_rom_spiflash_read_statushigh
-                0x0000000040078418        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x0000000040078414        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                           0xc (size before relaxing)
  .literal.esp_rom_spiflash_write_status
-                0x0000000040078418        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x0000000040078414        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x14 (size before relaxing)
  .literal.esp_rom_spiflash_unlock
-                0x000000004007841c        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x0000000040078418        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x38 (size before relaxing)
  .literal.esp_rom_spiflash_erase_sector
-                0x0000000040078428        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x0000000040078424        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x34 (size before relaxing)
  .literal.esp_rom_spiflash_write
-                0x0000000040078430        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007842c        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x24 (size before relaxing)
  .literal.esp_rom_spiflash_write_encrypted
-                0x0000000040078430        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007842c        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x10 (size before relaxing)
  .literal.esp_rom_spiflash_read
-                0x000000004007843c       0x2c /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x0000000040078438       0x2c /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x70 (size before relaxing)
  .literal.wdt_hal_init
-                0x0000000040078468       0x50 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x0000000040078464       0x50 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
                                          0x58 (size before relaxing)
  .literal.wdt_hal_config_stage
-                0x00000000400784b8        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x00000000400784b4        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
                                          0x24 (size before relaxing)
  .literal.wdt_hal_write_protect_disable
-                0x00000000400784b8        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x00000000400784b4        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
                                           0x4 (size before relaxing)
  .literal.wdt_hal_enable
-                0x00000000400784b8        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x00000000400784b4        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
                                           0x4 (size before relaxing)
  .literal.wdt_hal_set_flashboot_en
-                0x00000000400784b8        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x00000000400784b4        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
  .literal.rtc_clk_bbpll_disable
-                0x00000000400784bc        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x00000000400784b8        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x10 (size before relaxing)
  .literal.rtc_clk_cpu_freq_to_pll_mhz
-                0x00000000400784c4       0x24 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x00000000400784c0       0x24 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x40 (size before relaxing)
  .literal.rtc_clk_32k_enable_common$constprop$5
-                0x00000000400784e8       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x00000000400784e4       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x14 (size before relaxing)
  .literal.rtc_clk_32k_enable
-                0x00000000400784f8        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x00000000400784f4        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x10 (size before relaxing)
  .literal.rtc_clk_8m_enable
-                0x0000000040078500        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x00000000400784fc        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x10 (size before relaxing)
  .literal.rtc_clk_8m_enabled
-                0x0000000040078508        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078504        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                           0x4 (size before relaxing)
  .literal.rtc_clk_8md256_enabled
-                0x0000000040078508        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078504        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                           0x4 (size before relaxing)
  .literal.rtc_clk_slow_freq_set
-                0x0000000040078508        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078504        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                           0xc (size before relaxing)
  .literal.rtc_clk_slow_freq_get
-                0x0000000040078508        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078504        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                           0x4 (size before relaxing)
  .literal.rtc_clk_slow_freq_get_hz
-                0x0000000040078508        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078504        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x10 (size before relaxing)
  .literal.rtc_clk_fast_freq_set
-                0x0000000040078510        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007850c        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x10 (size before relaxing)
  .literal.rtc_clk_fast_freq_get
-                0x0000000040078510        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007850c        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                           0x4 (size before relaxing)
  .literal.rtc_clk_bbpll_configure
-                0x0000000040078510        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007850c        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x38 (size before relaxing)
  .literal.rtc_clk_xtal_freq_get
-                0x0000000040078514        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078510        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
  .literal.rtc_clk_cpu_freq_mhz_to_config
-                0x000000004007851c        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078518        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                           0x4 (size before relaxing)
  .literal.rtc_clk_cpu_freq_get_config
-                0x000000004007851c        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078518        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x24 (size before relaxing)
  .literal.rtc_clk_xtal_freq_update
-                0x0000000040078524        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078520        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                           0x8 (size before relaxing)
  .literal.rtc_clk_apb_freq_update
-                0x0000000040078528        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078524        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                           0x4 (size before relaxing)
  .literal.rtc_clk_cpu_freq_to_xtal
-                0x0000000040078528        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078524        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x2c (size before relaxing)
  .literal.rtc_clk_cpu_freq_set_config
-                0x0000000040078530        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007852c        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x68 (size before relaxing)
  .literal.rtc_clk_apb_freq_get
-                0x000000004007853c        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000040078538        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x14 (size before relaxing)
  .literal.rtc_clk_cal_internal
-                0x0000000040078548       0x38 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+                0x0000000040078544       0x38 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
                                          0x68 (size before relaxing)
  .literal.rtc_clk_cal_ratio
-                0x0000000040078580        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+                0x000000004007857c        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
                                           0x8 (size before relaxing)
  .literal.rtc_clk_wait_for_slow_cycle
-                0x0000000040078580        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+                0x000000004007857c        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
                                          0x1c (size before relaxing)
- .iram1.0       0x0000000040078588       0x6e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
-                0x0000000040078588                bootloader_flash_cs_timing_config
- *fill*         0x00000000400785f6        0x2 
- .iram1.2       0x00000000400785f8      0x1d2 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+ .iram1.0       0x0000000040078584       0x6e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+                0x0000000040078584                bootloader_flash_cs_timing_config
+ *fill*         0x00000000400785f2        0x2 
+ .iram1.2       0x00000000400785f4      0x1d2 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
                                         0x1d6 (size before relaxing)
-                0x00000000400785f8                bootloader_flash_gpio_config
- *fill*         0x00000000400787ca        0x2 
- .iram1.3       0x00000000400787cc       0x92 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
-                0x00000000400787cc                bootloader_flash_dummy_config
- *fill*         0x000000004007885e        0x2 
- .iram1.1       0x0000000040078860       0x36 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
-                0x0000000040078860                esp_rom_uart_tx_wait_idle
- *fill*         0x0000000040078896        0x2 
- .iram1.2       0x0000000040078898       0x14 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
-                0x0000000040078898                esp_rom_uart_set_clock_baudrate
- .iram1.0       0x00000000400788ac       0x21 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
-                0x00000000400788ac                esp_rom_install_channel_putc
- *fill*         0x00000000400788cd        0x3 
- .iram1.7       0x00000000400788d0        0xe /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
-                0x00000000400788d0                esp_cpu_in_ocd_debug_mode
- *fill*         0x00000000400788de        0x0 
- *fill*         0x00000000400788de        0x0 
- *fill*         0x00000000400788de        0x0 
- *fill*         0x00000000400788de        0x0 
- *fill*         0x00000000400788de        0x0 
+                0x00000000400785f4                bootloader_flash_gpio_config
+ *fill*         0x00000000400787c6        0x2 
+ .iram1.3       0x00000000400787c8       0x92 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+                0x00000000400787c8                bootloader_flash_dummy_config
+ *fill*         0x000000004007885a        0x2 
+ .iram1.1       0x000000004007885c       0x36 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
+                0x000000004007885c                esp_rom_uart_tx_wait_idle
+ *fill*         0x0000000040078892        0x2 
+ .iram1.2       0x0000000040078894       0x14 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
+                0x0000000040078894                esp_rom_uart_set_clock_baudrate
+ .iram1.0       0x00000000400788a8       0x21 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
+                0x00000000400788a8                esp_rom_install_channel_putc
+ *fill*         0x00000000400788c9        0x3 
+ .iram1.7       0x00000000400788cc        0xe /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+                0x00000000400788cc                esp_cpu_in_ocd_debug_mode
+ *fill*         0x00000000400788da        0x0 
+ *fill*         0x00000000400788da        0x0 
+ *fill*         0x00000000400788da        0x0 
+ *fill*         0x00000000400788da        0x0 
+ *fill*         0x00000000400788da        0x0 
  *liblog.a:(.literal .text .literal.* .text.*)
- *fill*         0x00000000400788de        0x2 
+ *fill*         0x00000000400788da        0x2 
  .text.esp_log_early_timestamp
-                0x00000000400788e0       0x1f /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
-                0x00000000400788e0                esp_log_timestamp
-                0x00000000400788e0                esp_log_early_timestamp
- *fill*         0x00000000400788ff        0x0 
+                0x00000000400788dc       0x1f /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
+                0x00000000400788dc                esp_log_timestamp
+                0x00000000400788dc                esp_log_early_timestamp
+ *fill*         0x00000000400788fb        0x0 
  *libgcc.a:(.literal .text .literal.* .text.*)
  *libbootloader_support.a:bootloader_clock_loader.*(.literal .text .literal.* .text.*)
  *libbootloader_support.a:bootloader_common_loader.*(.literal .text .literal.* .text.*)
- *fill*         0x00000000400788ff        0x1 
+ *fill*         0x00000000400788fb        0x1 
  .text.bootloader_common_ota_select_crc
-                0x0000000040078900       0x14 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
-                0x0000000040078900                bootloader_common_ota_select_crc
+                0x00000000400788fc       0x14 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
+                0x00000000400788fc                bootloader_common_ota_select_crc
  .text.bootloader_common_ota_select_valid
-                0x0000000040078914       0x22 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
+                0x0000000040078910       0x22 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
                                          0x26 (size before relaxing)
-                0x0000000040078914                bootloader_common_ota_select_valid
- *fill*         0x0000000040078936        0x2 
+                0x0000000040078910                bootloader_common_ota_select_valid
+ *fill*         0x0000000040078932        0x2 
  .text.bootloader_common_check_chip_validity
-                0x0000000040078938       0x80 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
+                0x0000000040078934       0x80 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
                                          0x8f (size before relaxing)
-                0x0000000040078938                bootloader_common_check_chip_validity
- *fill*         0x00000000400789b8        0x0 
+                0x0000000040078934                bootloader_common_check_chip_validity
+ *fill*         0x00000000400789b4        0x0 
  .text.bootloader_common_get_active_otadata
-                0x00000000400789b8       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
+                0x00000000400789b4       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
                                          0x30 (size before relaxing)
-                0x00000000400789b8                bootloader_common_get_active_otadata
- *fill*         0x00000000400789e0        0x0 
+                0x00000000400789b4                bootloader_common_get_active_otadata
+ *fill*         0x00000000400789dc        0x0 
  .text.bootloader_common_ota_select_invalid
-                0x00000000400789e0       0x19 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
-                0x00000000400789e0                bootloader_common_ota_select_invalid
- *fill*         0x00000000400789f9        0x0 
- *fill*         0x00000000400789f9        0x0 
- *fill*         0x00000000400789f9        0x3 
+                0x00000000400789dc       0x19 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
+                0x00000000400789dc                bootloader_common_ota_select_invalid
+ *fill*         0x00000000400789f5        0x0 
+ *fill*         0x00000000400789f5        0x0 
+ *fill*         0x00000000400789f5        0x3 
  .text.bootloader_common_select_otadata
-                0x00000000400789fc       0x4d /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
-                0x00000000400789fc                bootloader_common_select_otadata
- *fill*         0x0000000040078a49        0x0 
+                0x00000000400789f8       0x4d /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common_loader.o)
+                0x00000000400789f8                bootloader_common_select_otadata
+ *fill*         0x0000000040078a45        0x0 
  *libbootloader_support.a:bootloader_flash.*(.literal .text .literal.* .text.*)
- *fill*         0x0000000040078a49        0x3 
+ *fill*         0x0000000040078a45        0x3 
  .text.bootloader_mmap
-                0x0000000040078a4c       0xa9 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
+                0x0000000040078a48       0xa9 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
                                          0xad (size before relaxing)
-                0x0000000040078a4c                bootloader_mmap
- *fill*         0x0000000040078af5        0x3 
+                0x0000000040078a48                bootloader_mmap
+ *fill*         0x0000000040078af1        0x3 
  .text.bootloader_munmap
-                0x0000000040078af8       0x32 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
-                0x0000000040078af8                bootloader_munmap
- *fill*         0x0000000040078b2a        0x2 
+                0x0000000040078af4       0x32 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
+                0x0000000040078af4                bootloader_munmap
+ *fill*         0x0000000040078b26        0x2 
  .text.bootloader_flash_read
-                0x0000000040078b2c      0x11a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
+                0x0000000040078b28      0x11a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
                                         0x11e (size before relaxing)
-                0x0000000040078b2c                bootloader_flash_read
- *fill*         0x0000000040078c46        0x2 
+                0x0000000040078b28                bootloader_flash_read
+ *fill*         0x0000000040078c42        0x2 
  .text.bootloader_flash_write
-                0x0000000040078c48       0xa2 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
+                0x0000000040078c44       0xa2 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
                                          0xa9 (size before relaxing)
-                0x0000000040078c48                bootloader_flash_write
- *fill*         0x0000000040078cea        0x2 
+                0x0000000040078c44                bootloader_flash_write
+ *fill*         0x0000000040078ce6        0x2 
  .text.bootloader_flash_erase_sector
-                0x0000000040078cec       0x1a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
+                0x0000000040078ce8       0x1a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
                                          0x1e (size before relaxing)
-                0x0000000040078cec                bootloader_flash_erase_sector
- *fill*         0x0000000040078d06        0x2 
+                0x0000000040078ce8                bootloader_flash_erase_sector
+ *fill*         0x0000000040078d02        0x2 
  .text.bootloader_execute_flash_command
-                0x0000000040078d08      0x16f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
-                0x0000000040078d08                bootloader_execute_flash_command
- *fill*         0x0000000040078e77        0x1 
+                0x0000000040078d04      0x16f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
+                0x0000000040078d04                bootloader_execute_flash_command
+ *fill*         0x0000000040078e73        0x1 
  .text.bootloader_enable_wp
-                0x0000000040078e78       0x13 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
-                0x0000000040078e78                bootloader_enable_wp
- *fill*         0x0000000040078e8b        0x1 
+                0x0000000040078e74       0x13 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
+                0x0000000040078e74                bootloader_enable_wp
+ *fill*         0x0000000040078e87        0x1 
  .text.bootloader_mmap_get_free_pages
-                0x0000000040078e8c        0x7 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
-                0x0000000040078e8c                bootloader_mmap_get_free_pages
- *fill*         0x0000000040078e93        0x0 
- *fill*         0x0000000040078e93        0x0 
- *fill*         0x0000000040078e93        0x0 
- *fill*         0x0000000040078e93        0x0 
- *fill*         0x0000000040078e93        0x0 
- *fill*         0x0000000040078e93        0x0 
- *fill*         0x0000000040078e93        0x0 
+                0x0000000040078e88        0x7 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
+                0x0000000040078e88                bootloader_mmap_get_free_pages
+ *fill*         0x0000000040078e8f        0x0 
+ *fill*         0x0000000040078e8f        0x0 
+ *fill*         0x0000000040078e8f        0x0 
+ *fill*         0x0000000040078e8f        0x0 
+ *fill*         0x0000000040078e8f        0x0 
+ *fill*         0x0000000040078e8f        0x0 
+ *fill*         0x0000000040078e8f        0x0 
  *libbootloader_support.a:bootloader_random.*(.literal .text .literal.* .text.*)
- *fill*         0x0000000040078e93        0x1 
+ *fill*         0x0000000040078e8f        0x1 
  .text.bootloader_fill_random
-                0x0000000040078e94       0x59 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
-                0x0000000040078e94                bootloader_fill_random
- *fill*         0x0000000040078eed        0x0 
+                0x0000000040078e90       0x59 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+                0x0000000040078e90                bootloader_fill_random
+ *fill*         0x0000000040078ee9        0x0 
  *libbootloader_support.a:bootloader_random*.*(.literal.bootloader_random_disable .text.bootloader_random_disable)
- *fill*         0x0000000040078eed        0x3 
+ *fill*         0x0000000040078ee9        0x3 
  .text.bootloader_random_disable
-                0x0000000040078ef0      0x13a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
-                0x0000000040078ef0                bootloader_random_disable
- *fill*         0x000000004007902a        0x0 
+                0x0000000040078eec      0x13a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
+                0x0000000040078eec                bootloader_random_disable
+ *fill*         0x0000000040079026        0x0 
  *libbootloader_support.a:bootloader_efuse_esp32.*(.literal .text .literal.* .text.*)
- *fill*         0x000000004007902a        0x2 
+ *fill*         0x0000000040079026        0x2 
  .text.bootloader_common_get_chip_revision
-                0x000000004007902c       0x42 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
-                0x000000004007902c                bootloader_common_get_chip_revision
- *fill*         0x000000004007906e        0x2 
+                0x0000000040079028       0x42 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+                0x0000000040079028                bootloader_common_get_chip_revision
+ *fill*         0x000000004007906a        0x2 
  .text.bootloader_common_get_chip_ver_pkg
-                0x0000000040079070       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
-                0x0000000040079070                bootloader_common_get_chip_ver_pkg
+                0x000000004007906c       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+                0x000000004007906c                bootloader_common_get_chip_ver_pkg
  .text.bootloader_clock_get_rated_freq_mhz
-                0x0000000040079090       0x22 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
-                0x0000000040079090                bootloader_clock_get_rated_freq_mhz
- *fill*         0x00000000400790b2        0x0 
- *fill*         0x00000000400790b2        0x0 
+                0x000000004007908c       0x22 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+                0x000000004007908c                bootloader_clock_get_rated_freq_mhz
+ *fill*         0x00000000400790ae        0x0 
+ *fill*         0x00000000400790ae        0x0 
  *libbootloader_support.a:bootloader_utility.*(.literal .text .literal.* .text.*)
- *fill*         0x00000000400790b2        0x2 
+ *fill*         0x00000000400790ae        0x2 
  .text.load_image
-                0x00000000400790b4      0x17b /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x00000000400790b0      0x17b /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                         0x18b (size before relaxing)
- *fill*         0x000000004007922f        0x1 
+ *fill*         0x000000004007922b        0x1 
  .text.log_invalid_app_partition
-                0x0000000040079230       0x53 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x000000004007922c       0x53 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                          0x5b (size before relaxing)
- *fill*         0x0000000040079283        0x1 
+ *fill*         0x000000004007927f        0x1 
  .text.set_actual_ota_seq$isra$3$part$4
-                0x0000000040079284       0x87 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x0000000040079280       0x87 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                          0x97 (size before relaxing)
- *fill*         0x000000004007930b        0x1 
+ *fill*         0x0000000040079307        0x1 
  .text.try_load_partition
-                0x000000004007930c       0x2f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x0000000040079308       0x2f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                          0x33 (size before relaxing)
- *fill*         0x000000004007933b        0x1 
+ *fill*         0x0000000040079337        0x1 
  .text.bootloader_utility_load_partition_table
-                0x000000004007933c      0x174 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x0000000040079338      0x174 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                         0x188 (size before relaxing)
-                0x000000004007933c                bootloader_utility_load_partition_table
+                0x0000000040079338                bootloader_utility_load_partition_table
  .text.bootloader_utility_get_selected_boot_partition
-                0x00000000400794b0      0x130 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x00000000400794ac      0x130 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                         0x153 (size before relaxing)
-                0x00000000400794b0                bootloader_utility_get_selected_boot_partition
- *fill*         0x00000000400795e0        0x0 
+                0x00000000400794ac                bootloader_utility_get_selected_boot_partition
+ *fill*         0x00000000400795dc        0x0 
  .text.bootloader_reset
-                0x00000000400795e0       0x1d /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x00000000400795dc       0x1d /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                          0x20 (size before relaxing)
-                0x00000000400795e0                bootloader_reset
- *fill*         0x00000000400795fd        0x3 
+                0x00000000400795dc                bootloader_reset
+ *fill*         0x00000000400795f9        0x3 
  .text.bootloader_utility_load_boot_image
-                0x0000000040079600      0x104 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x00000000400795fc      0x104 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                         0x120 (size before relaxing)
-                0x0000000040079600                bootloader_utility_load_boot_image
+                0x00000000400795fc                bootloader_utility_load_boot_image
  .text.bootloader_debug_buffer
-                0x0000000040079704       0x1a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x0000000040079700       0x1a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                          0x1d (size before relaxing)
-                0x0000000040079704                bootloader_debug_buffer
- *fill*         0x000000004007971e        0x0 
- *fill*         0x000000004007971e        0x2 
+                0x0000000040079700                bootloader_debug_buffer
+ *fill*         0x000000004007971a        0x0 
+ *fill*         0x000000004007971a        0x2 
  .text.index_to_partition
-                0x0000000040079720       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
- *fill*         0x0000000040079760        0x0 
- *fill*         0x0000000040079760        0x0 
- *fill*         0x0000000040079760        0x0 
- *fill*         0x0000000040079760        0x0 
+                0x000000004007971c       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+ *fill*         0x000000004007975c        0x0 
+ *fill*         0x000000004007975c        0x0 
+ *fill*         0x000000004007975c        0x0 
+ *fill*         0x000000004007975c        0x0 
  *libbootloader_support.a:bootloader_sha.*(.literal .text .literal.* .text.*)
  .text.bootloader_sha256_start
-                0x0000000040079760       0x12 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
-                0x0000000040079760                bootloader_sha256_start
- *fill*         0x0000000040079772        0x2 
+                0x000000004007975c       0x12 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
+                0x000000004007975c                bootloader_sha256_start
+ *fill*         0x000000004007976e        0x2 
  .text.bootloader_sha256_data
-                0x0000000040079774       0x9f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
+                0x0000000040079770       0x9f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
                                          0xa3 (size before relaxing)
-                0x0000000040079774                bootloader_sha256_data
- *fill*         0x0000000040079813        0x1 
+                0x0000000040079770                bootloader_sha256_data
+ *fill*         0x000000004007980f        0x1 
  .text.bootloader_sha256_finish
-                0x0000000040079814       0xc2 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
+                0x0000000040079810       0xc2 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
                                          0xc6 (size before relaxing)
-                0x0000000040079814                bootloader_sha256_finish
- *fill*         0x00000000400798d6        0x0 
- *fill*         0x00000000400798d6        0x0 
- *fill*         0x00000000400798d6        0x0 
+                0x0000000040079810                bootloader_sha256_finish
+ *fill*         0x00000000400798d2        0x0 
+ *fill*         0x00000000400798d2        0x0 
+ *fill*         0x00000000400798d2        0x0 
  *libbootloader_support.a:bootloader_console_loader.*(.literal .text .literal.* .text.*)
- *fill*         0x00000000400798d6        0x2 
+ *fill*         0x00000000400798d2        0x2 
  .text.bootloader_console_deinit
-                0x00000000400798d8        0xe /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console_loader.o)
-                0x00000000400798d8                bootloader_console_deinit
- *fill*         0x00000000400798e6        0x0 
+                0x00000000400798d4        0xe /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console_loader.o)
+                0x00000000400798d4                bootloader_console_deinit
+ *fill*         0x00000000400798e2        0x0 
  *libbootloader_support.a:bootloader_panic.*(.literal .text .literal.* .text.*)
- *fill*         0x00000000400798e6        0x2 
+ *fill*         0x00000000400798e2        0x2 
  .text.__assert_func
-                0x00000000400798e8       0x17 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_panic.o)
-                0x00000000400798e8                __assert_func
- *fill*         0x00000000400798ff        0x1 
+                0x00000000400798e4       0x17 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_panic.o)
+                0x00000000400798e4                __assert_func
+ *fill*         0x00000000400798fb        0x1 
  .text.unlikely.abort
-                0x0000000040079900       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_panic.o)
-                0x0000000040079900                abort
- *fill*         0x0000000040079930        0x0 
- *fill*         0x0000000040079930        0x0 
+                0x00000000400798fc       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_panic.o)
+                0x00000000400798fc                abort
+ *fill*         0x000000004007992c        0x0 
+ *fill*         0x000000004007992c        0x0 
  *libbootloader_support.a:esp_image_format.*(.literal .text .literal.* .text.*)
  .text.bootloader_util_regions_overlap
-                0x0000000040079930       0x38 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x000000004007992c       0x38 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                          0x3c (size before relaxing)
  .text.verify_load_addresses
-                0x0000000040079968      0x163 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x0000000040079964      0x163 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                         0x177 (size before relaxing)
- *fill*         0x0000000040079acb        0x1 
+ *fill*         0x0000000040079ac7        0x1 
  .text.should_load
-                0x0000000040079acc       0x76 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
- *fill*         0x0000000040079b42        0x2 
+                0x0000000040079ac8       0x76 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+ *fill*         0x0000000040079b3e        0x2 
  .text.process_segment
-                0x0000000040079b44      0x231 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x0000000040079b40      0x231 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                         0x249 (size before relaxing)
- *fill*         0x0000000040079d75        0x3 
+ *fill*         0x0000000040079d71        0x3 
  .text.image_load
-                0x0000000040079d78      0x44e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x0000000040079d74      0x44e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                         0x492 (size before relaxing)
- *fill*         0x000000004007a1c6        0x2 
+ *fill*         0x000000004007a1c2        0x2 
  .text.bootloader_load_image
-                0x000000004007a1c8       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x000000004007a1c4       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                          0x14 (size before relaxing)
-                0x000000004007a1c8                bootloader_load_image
- *fill*         0x000000004007a1d8        0x0 
- *fill*         0x000000004007a1d8        0x0 
- *fill*         0x000000004007a1d8        0x0 
- *fill*         0x000000004007a1d8        0x0 
+                0x000000004007a1c4                bootloader_load_image
+ *fill*         0x000000004007a1d4        0x0 
+ *fill*         0x000000004007a1d4        0x0 
+ *fill*         0x000000004007a1d4        0x0 
+ *fill*         0x000000004007a1d4        0x0 
  *libbootloader_support.a:flash_encrypt.*(.literal .text .literal.* .text.*)
  *libbootloader_support.a:flash_partitions.*(.literal .text .literal.* .text.*)
  .text.esp_partition_table_verify
-                0x000000004007a1d8      0x11d /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
+                0x000000004007a1d4      0x11d /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
                                         0x124 (size before relaxing)
-                0x000000004007a1d8                esp_partition_table_verify
+                0x000000004007a1d4                esp_partition_table_verify
  *libbootloader_support.a:secure_boot.*(.literal .text .literal.* .text.*)
  *libbootloader_support.a:secure_boot_signatures_bootloader.*(.literal .text .literal.* .text.*)
  *libmicro-ecc.a:*.*(.literal .text .literal.* .text.*)
  *libspi_flash.a:*.*(.literal .text .literal.* .text.*)
- *fill*         0x000000004007a2f5        0x3 
+ *fill*         0x000000004007a2f1        0x3 
  .text.esp_rom_spiflash_read_status
-                0x000000004007a2f8       0x5b /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
-                0x000000004007a2f8                esp_rom_spiflash_read_status
- *fill*         0x000000004007a353        0x1 
+                0x000000004007a2f4       0x5b /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a2f4                esp_rom_spiflash_read_status
+ *fill*         0x000000004007a34f        0x1 
  .text.esp_rom_spiflash_wait_idle
-                0x000000004007a354       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
-                0x000000004007a354                esp_rom_spiflash_wait_idle
+                0x000000004007a350       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a350                esp_rom_spiflash_wait_idle
  .text.esp_rom_spiflash_enable_write$constprop$7
-                0x000000004007a384       0x3c /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a380       0x3c /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x43 (size before relaxing)
- *fill*         0x000000004007a3c0        0x0 
+ *fill*         0x000000004007a3bc        0x0 
  .text.esp_rom_spiflash_program_page_internal$constprop$5
-                0x000000004007a3c0       0xbb /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a3bc       0xbb /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0xbf (size before relaxing)
- *fill*         0x000000004007a47b        0x1 
+ *fill*         0x000000004007a477        0x1 
  .text.esp_rom_spiflash_read_statushigh
-                0x000000004007a47c       0x21 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
-                0x000000004007a47c                esp_rom_spiflash_read_statushigh
- *fill*         0x000000004007a49d        0x3 
+                0x000000004007a478       0x21 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a478                esp_rom_spiflash_read_statushigh
+ *fill*         0x000000004007a499        0x3 
  .text.esp_rom_spiflash_write_status
-                0x000000004007a4a0       0x2f /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a49c       0x2f /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x33 (size before relaxing)
-                0x000000004007a4a0                esp_rom_spiflash_write_status
- *fill*         0x000000004007a4cf        0x1 
+                0x000000004007a49c                esp_rom_spiflash_write_status
+ *fill*         0x000000004007a4cb        0x1 
  .text.esp_rom_spiflash_unlock
-                0x000000004007a4d0       0xaa /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a4cc       0xaa /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0xba (size before relaxing)
-                0x000000004007a4d0                esp_rom_spiflash_unlock
- *fill*         0x000000004007a57a        0x2 
+                0x000000004007a4cc                esp_rom_spiflash_unlock
+ *fill*         0x000000004007a576        0x2 
  .text.esp_rom_spiflash_erase_sector
-                0x000000004007a57c       0x81 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a578       0x81 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x88 (size before relaxing)
-                0x000000004007a57c                esp_rom_spiflash_erase_sector
- *fill*         0x000000004007a5fd        0x3 
+                0x000000004007a578                esp_rom_spiflash_erase_sector
+ *fill*         0x000000004007a5f9        0x3 
  .text.esp_rom_spiflash_write
-                0x000000004007a600       0xab /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
-                0x000000004007a600                esp_rom_spiflash_write
- *fill*         0x000000004007a6ab        0x1 
+                0x000000004007a5fc       0xab /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a5fc                esp_rom_spiflash_write
+ *fill*         0x000000004007a6a7        0x1 
  .text.esp_rom_spiflash_write_encrypted
-                0x000000004007a6ac       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a6a8       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
                                          0x5c (size before relaxing)
-                0x000000004007a6ac                esp_rom_spiflash_write_encrypted
+                0x000000004007a6a8                esp_rom_spiflash_write_encrypted
  .text.esp_rom_spiflash_read
-                0x000000004007a704      0x2e0 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
-                0x000000004007a704                esp_rom_spiflash_read
- *fill*         0x000000004007a9e4        0x0 
- *fill*         0x000000004007a9e4        0x0 
- *fill*         0x000000004007a9e4        0x0 
- *fill*         0x000000004007a9e4        0x0 
- *fill*         0x000000004007a9e4        0x0 
- *fill*         0x000000004007a9e4        0x0 
- *fill*         0x000000004007a9e4        0x0 
+                0x000000004007a700      0x2e0 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x000000004007a700                esp_rom_spiflash_read
+ *fill*         0x000000004007a9e0        0x0 
+ *fill*         0x000000004007a9e0        0x0 
+ *fill*         0x000000004007a9e0        0x0 
+ *fill*         0x000000004007a9e0        0x0 
+ *fill*         0x000000004007a9e0        0x0 
+ *fill*         0x000000004007a9e0        0x0 
+ *fill*         0x000000004007a9e0        0x0 
  *libhal.a:wdt_hal_iram.*(.literal .text .literal.* .text.*)
  .text.wdt_hal_init
-                0x000000004007a9e4      0x237 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
-                0x000000004007a9e4                wdt_hal_init
- *fill*         0x000000004007ac1b        0x1 
+                0x000000004007a9e0      0x237 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x000000004007a9e0                wdt_hal_init
+ *fill*         0x000000004007ac17        0x1 
  .text.wdt_hal_config_stage
-                0x000000004007ac1c      0x13c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x000000004007ac18      0x13c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
                                         0x140 (size before relaxing)
-                0x000000004007ac1c                wdt_hal_config_stage
+                0x000000004007ac18                wdt_hal_config_stage
  .text.wdt_hal_write_protect_disable
-                0x000000004007ad58       0x1d /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
-                0x000000004007ad58                wdt_hal_write_protect_disable
- *fill*         0x000000004007ad75        0x3 
+                0x000000004007ad54       0x1d /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x000000004007ad54                wdt_hal_write_protect_disable
+ *fill*         0x000000004007ad71        0x3 
  .text.wdt_hal_enable
-                0x000000004007ad78       0x46 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
-                0x000000004007ad78                wdt_hal_enable
- *fill*         0x000000004007adbe        0x2 
+                0x000000004007ad74       0x46 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x000000004007ad74                wdt_hal_enable
+ *fill*         0x000000004007adba        0x2 
  .text.wdt_hal_set_flashboot_en
-                0x000000004007adc0       0x43 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
-                0x000000004007adc0                wdt_hal_set_flashboot_en
- *fill*         0x000000004007ae03        0x0 
- *fill*         0x000000004007ae03        0x1 
+                0x000000004007adbc       0x43 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x000000004007adbc                wdt_hal_set_flashboot_en
+ *fill*         0x000000004007adff        0x0 
+ *fill*         0x000000004007adff        0x1 
  .text.wdt_hal_write_protect_enable
-                0x000000004007ae04       0x1c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
-                0x000000004007ae04                wdt_hal_write_protect_enable
- *fill*         0x000000004007ae20        0x0 
+                0x000000004007ae00       0x1c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x000000004007ae00                wdt_hal_write_protect_enable
+ *fill*         0x000000004007ae1c        0x0 
  *libesp_hw_support.a:rtc_clk.*(.literal .text .literal.* .text.*)
  .text.rtc_clk_bbpll_disable
-                0x000000004007ae20       0x3a /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
- *fill*         0x000000004007ae5a        0x2 
+                0x000000004007ae1c       0x3a /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+ *fill*         0x000000004007ae56        0x2 
  .text.rtc_clk_cpu_freq_to_pll_mhz
-                0x000000004007ae5c       0xa3 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007ae58       0xa3 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0xa7 (size before relaxing)
- *fill*         0x000000004007aeff        0x1 
+ *fill*         0x000000004007aefb        0x1 
  .text.rtc_clk_32k_enable_common$constprop$5
-                0x000000004007af00       0x72 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
- *fill*         0x000000004007af72        0x2 
+                0x000000004007aefc       0x72 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+ *fill*         0x000000004007af6e        0x2 
  .text.rtc_clk_32k_enable
-                0x000000004007af74       0x3a /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007af74                rtc_clk_32k_enable
- *fill*         0x000000004007afae        0x2 
+                0x000000004007af70       0x3a /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007af70                rtc_clk_32k_enable
+ *fill*         0x000000004007afaa        0x2 
  .text.rtc_clk_8m_enable
-                0x000000004007afb0       0x7f /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007afb0                rtc_clk_8m_enable
- *fill*         0x000000004007b02f        0x1 
+                0x000000004007afac       0x7f /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007afac                rtc_clk_8m_enable
+ *fill*         0x000000004007b02b        0x1 
  .text.rtc_clk_8m_enabled
-                0x000000004007b030       0x15 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b030                rtc_clk_8m_enabled
- *fill*         0x000000004007b045        0x3 
+                0x000000004007b02c       0x15 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b02c                rtc_clk_8m_enabled
+ *fill*         0x000000004007b041        0x3 
  .text.rtc_clk_8md256_enabled
-                0x000000004007b048       0x15 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b048                rtc_clk_8md256_enabled
- *fill*         0x000000004007b05d        0x3 
+                0x000000004007b044       0x15 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b044                rtc_clk_8md256_enabled
+ *fill*         0x000000004007b059        0x3 
  .text.rtc_clk_slow_freq_set
-                0x000000004007b060       0x44 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b060                rtc_clk_slow_freq_set
+                0x000000004007b05c       0x44 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b05c                rtc_clk_slow_freq_set
  .text.rtc_clk_slow_freq_get
-                0x000000004007b0a4       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b0a4                rtc_clk_slow_freq_get
+                0x000000004007b0a0       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b0a0                rtc_clk_slow_freq_get
  .text.rtc_clk_slow_freq_get_hz
-                0x000000004007b0b4       0x26 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b0b4                rtc_clk_slow_freq_get_hz
- *fill*         0x000000004007b0da        0x2 
+                0x000000004007b0b0       0x26 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b0b0                rtc_clk_slow_freq_get_hz
+ *fill*         0x000000004007b0d6        0x2 
  .text.rtc_clk_fast_freq_set
-                0x000000004007b0dc       0x2c /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b0dc                rtc_clk_fast_freq_set
+                0x000000004007b0d8       0x2c /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b0d8                rtc_clk_fast_freq_set
  .text.rtc_clk_fast_freq_get
-                0x000000004007b108       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b108                rtc_clk_fast_freq_get
+                0x000000004007b104       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b104                rtc_clk_fast_freq_get
  .text.rtc_clk_bbpll_configure
-                0x000000004007b118      0x180 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b118                rtc_clk_bbpll_configure
+                0x000000004007b114      0x180 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b114                rtc_clk_bbpll_configure
  .text.rtc_clk_xtal_freq_get
-                0x000000004007b298       0x26 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b298                rtc_get_xtal
-                0x000000004007b298                rtc_clk_xtal_freq_get
- *fill*         0x000000004007b2be        0x2 
+                0x000000004007b294       0x26 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b294                rtc_get_xtal
+                0x000000004007b294                rtc_clk_xtal_freq_get
+ *fill*         0x000000004007b2ba        0x2 
  .text.rtc_clk_cpu_freq_mhz_to_config
-                0x000000004007b2c0       0x57 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b2c0                rtc_clk_cpu_freq_mhz_to_config
- *fill*         0x000000004007b317        0x1 
+                0x000000004007b2bc       0x57 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b2bc                rtc_clk_cpu_freq_mhz_to_config
+ *fill*         0x000000004007b313        0x1 
  .text.rtc_clk_cpu_freq_get_config
-                0x000000004007b318       0x80 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b314       0x80 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x88 (size before relaxing)
-                0x000000004007b318                rtc_clk_cpu_freq_get_config
+                0x000000004007b314                rtc_clk_cpu_freq_get_config
  .text.rtc_clk_xtal_freq_update
-                0x000000004007b398       0x29 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b398                rtc_clk_xtal_freq_update
- *fill*         0x000000004007b3c1        0x3 
+                0x000000004007b394       0x29 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b394                rtc_clk_xtal_freq_update
+ *fill*         0x000000004007b3bd        0x3 
  .text.rtc_clk_apb_freq_update
-                0x000000004007b3c4       0x19 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b3c4                rtc_clk_apb_freq_update
- *fill*         0x000000004007b3dd        0x3 
+                0x000000004007b3c0       0x19 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b3c0                rtc_clk_apb_freq_update
+ *fill*         0x000000004007b3d9        0x3 
  .text.rtc_clk_cpu_freq_to_xtal
-                0x000000004007b3e0       0x72 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b3dc       0x72 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                          0x76 (size before relaxing)
-                0x000000004007b3e0                rtc_clk_cpu_freq_to_xtal
- *fill*         0x000000004007b452        0x2 
+                0x000000004007b3dc                rtc_clk_cpu_freq_to_xtal
+ *fill*         0x000000004007b44e        0x2 
  .text.rtc_clk_cpu_freq_set_config
-                0x000000004007b454      0x115 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b450      0x115 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
                                         0x12d (size before relaxing)
-                0x000000004007b454                rtc_clk_cpu_freq_set_config
- *fill*         0x000000004007b569        0x3 
+                0x000000004007b450                rtc_clk_cpu_freq_set_config
+ *fill*         0x000000004007b565        0x3 
  .text.rtc_clk_apb_freq_get
-                0x000000004007b56c       0x2a /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
-                0x000000004007b56c                rtc_clk_apb_freq_get
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
- *fill*         0x000000004007b596        0x0 
+                0x000000004007b568       0x2a /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000004007b568                rtc_clk_apb_freq_get
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
+ *fill*         0x000000004007b592        0x0 
  *libesp_hw_support.a:rtc_time.*(.literal .text .literal.* .text.*)
- *fill*         0x000000004007b596        0x2 
+ *fill*         0x000000004007b592        0x2 
  .text.rtc_clk_cal_internal
-                0x000000004007b598      0x197 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+                0x000000004007b594      0x197 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
                                         0x19f (size before relaxing)
- *fill*         0x000000004007b72f        0x1 
+ *fill*         0x000000004007b72b        0x1 
  .text.rtc_clk_cal_ratio
-                0x000000004007b730       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+                0x000000004007b72c       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
                                          0x24 (size before relaxing)
-                0x000000004007b730                rtc_clk_cal_ratio
+                0x000000004007b72c                rtc_clk_cal_ratio
  .text.rtc_clk_wait_for_slow_cycle
-                0x000000004007b750       0x68 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
-                0x000000004007b750                rtc_clk_wait_for_slow_cycle
- *fill*         0x000000004007b7b8        0x0 
- *fill*         0x000000004007b7b8        0x0 
+                0x000000004007b74c       0x68 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+                0x000000004007b74c                rtc_clk_wait_for_slow_cycle
+ *fill*         0x000000004007b7b4        0x0 
+ *fill*         0x000000004007b7b4        0x0 
  *libefuse.a:*.*(.literal .text .literal.* .text.*)
  *(.fini.literal)
  *(.fini)
  *(.gnu.version)
-                0x000000004007b7b8                _loader_text_end = ABSOLUTE (.)
+                0x000000004007b7b4                _loader_text_end = ABSOLUTE (.)
 
-.iram.text      0x0000000040080400      0xd8c
+.iram.text      0x0000000040080400      0xe64
                 0x0000000040080400                . = ALIGN (0x10)
  *(.entry.text)
  *(.init.literal)
@@ -1368,168 +1368,178 @@ END GROUP
                                          0x10 (size before relaxing)
  .literal.bootloader_common_get_reset_reason
                 0x0000000040080490        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common.o)
+ .literal.wdt_reset_info_dump
+                0x0000000040080494       0x5c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                                         0x68 (size before relaxing)
  .literal.bootloader_init
-                0x0000000040080494       0xd0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
-                                        0x164 (size before relaxing)
+                0x00000000400804f0       0xa8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                                        0x148 (size before relaxing)
  .literal.bootloader_clear_bss_section
-                0x0000000040080564        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x0000000040080598        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                           0xc (size before relaxing)
  .literal.bootloader_read_bootloader_header
-                0x0000000040080564        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x0000000040080598        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x1c (size before relaxing)
  .literal.bootloader_check_bootloader_validity
-                0x000000004008056c        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x00000000400805a0        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x1c (size before relaxing)
  .literal.bootloader_config_wdt
-                0x0000000040080570       0x18 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x00000000400805a4       0x18 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x48 (size before relaxing)
  .literal.bootloader_enable_random
-                0x0000000040080588        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x00000000400805bc        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x14 (size before relaxing)
  .literal.bootloader_print_banner
-                0x000000004008058c        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x00000000400805c0        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x20 (size before relaxing)
  .literal.bootloader_init_mem
-                0x0000000040080598        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
+                0x00000000400805cc        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
                                           0x4 (size before relaxing)
  .literal.bootloader_clock_configure
-                0x0000000040080598       0x1c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
+                0x00000000400805cc       0x1c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
                                          0x34 (size before relaxing)
  .literal.bootloader_console_init
-                0x00000000400805b4        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
+                0x00000000400805e8        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
                                          0x18 (size before relaxing)
  .literal.bootloader_flash_update_id
-                0x00000000400805bc        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+                0x00000000400805f0        0x0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
                                           0x8 (size before relaxing)
  .literal.bootloader_read_flash_id
-                0x00000000400805bc        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
+                0x00000000400805f0        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
                                           0xc (size before relaxing)
  .literal.esp_cpu_configure_region_protection
-                0x00000000400805c4        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+                0x00000000400805f8        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
                                          0x10 (size before relaxing)
  .literal.rtc_vddsdio_get_config
-                0x00000000400805cc        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+                0x0000000040080600        0xc /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
                                          0x10 (size before relaxing)
  .literal.rtc_vddsdio_set_config
-                0x00000000400805d8        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+                0x000000004008060c        0x4 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
                                           0x8 (size before relaxing)
  .literal.rtc_clk_xtal_freq_estimate
-                0x00000000400805dc       0x1c /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+                0x0000000040080610       0x1c /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
                                          0x4c (size before relaxing)
  .literal.rtc_clk_init
-                0x00000000400805f8       0x48 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+                0x000000004008062c       0x48 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
                                          0xa8 (size before relaxing)
  .text.call_start_cpu0
-                0x0000000040080640       0x54 /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)
+                0x0000000040080674       0x54 /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)
                                          0x64 (size before relaxing)
-                0x0000000040080640                call_start_cpu0
+                0x0000000040080674                call_start_cpu0
  .text.bootloader_random_enable
-                0x0000000040080694      0x1d5 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
-                0x0000000040080694                bootloader_random_enable
- *fill*         0x0000000040080869        0x3 
+                0x00000000400806c8      0x1d5 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
+                0x00000000400806c8                bootloader_random_enable
+ *fill*         0x000000004008089d        0x3 
  .text.bootloader_common_vddsdio_configure
-                0x000000004008086c       0x33 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common.o)
+                0x00000000400808a0       0x33 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common.o)
                                          0x3a (size before relaxing)
-                0x000000004008086c                bootloader_common_vddsdio_configure
- *fill*         0x000000004008089f        0x1 
+                0x00000000400808a0                bootloader_common_vddsdio_configure
+ *fill*         0x00000000400808d3        0x1 
  .text.bootloader_common_get_reset_reason
-                0x00000000400808a0       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common.o)
-                0x00000000400808a0                bootloader_common_get_reset_reason
+                0x00000000400808d4       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_common.o)
+                0x00000000400808d4                bootloader_common_get_reset_reason
+ .text.wdt_reset_info_dump
+                0x00000000400808e4       0xda /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                                         0xde (size before relaxing)
+ *fill*         0x00000000400809be        0x2 
  .text.bootloader_init
-                0x00000000400808b0      0x2cc /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
-                                        0x31c (size before relaxing)
-                0x00000000400808b0                bootloader_init
+                0x00000000400809c0      0x293 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                                        0x2e3 (size before relaxing)
+                0x00000000400809c0                bootloader_init
+ *fill*         0x0000000040080c53        0x1 
  .text.bootloader_clear_bss_section
-                0x0000000040080b7c       0x16 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
-                0x0000000040080b7c                bootloader_clear_bss_section
- *fill*         0x0000000040080b92        0x2 
+                0x0000000040080c54       0x16 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x0000000040080c54                bootloader_clear_bss_section
+ *fill*         0x0000000040080c6a        0x2 
  .text.bootloader_read_bootloader_header
-                0x0000000040080b94       0x2c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x0000000040080c6c       0x2c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x30 (size before relaxing)
-                0x0000000040080b94                bootloader_read_bootloader_header
+                0x0000000040080c6c                bootloader_read_bootloader_header
  .text.bootloader_check_bootloader_validity
-                0x0000000040080bc0       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x0000000040080c98       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x38 (size before relaxing)
-                0x0000000040080bc0                bootloader_check_bootloader_validity
+                0x0000000040080c98                bootloader_check_bootloader_validity
  .text.bootloader_config_wdt
-                0x0000000040080bf0       0x7c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x0000000040080cc8       0x7c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0xa0 (size before relaxing)
-                0x0000000040080bf0                bootloader_config_wdt
+                0x0000000040080cc8                bootloader_config_wdt
  .text.bootloader_enable_random
-                0x0000000040080c6c       0x19 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x0000000040080d44       0x19 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x20 (size before relaxing)
-                0x0000000040080c6c                bootloader_enable_random
- *fill*         0x0000000040080c85        0x3 
+                0x0000000040080d44                bootloader_enable_random
+ *fill*         0x0000000040080d5d        0x3 
  .text.bootloader_print_banner
-                0x0000000040080c88       0x2e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x0000000040080d60       0x2e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x32 (size before relaxing)
-                0x0000000040080c88                bootloader_print_banner
- *fill*         0x0000000040080cb6        0x2 
+                0x0000000040080d60                bootloader_print_banner
+ *fill*         0x0000000040080d8e        0x2 
  .text.bootloader_init_mem
-                0x0000000040080cb8        0xd /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
+                0x0000000040080d90        0xd /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
                                          0x10 (size before relaxing)
-                0x0000000040080cb8                bootloader_init_mem
- *fill*         0x0000000040080cc5        0x3 
+                0x0000000040080d90                bootloader_init_mem
+ *fill*         0x0000000040080d9d        0x3 
  .text.bootloader_clock_configure
-                0x0000000040080cc8       0x98 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
+                0x0000000040080da0       0x98 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
                                          0xa4 (size before relaxing)
-                0x0000000040080cc8                bootloader_clock_configure
+                0x0000000040080da0                bootloader_clock_configure
  .text.bootloader_console_init
-                0x0000000040080d60       0x1f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
+                0x0000000040080e38       0x1f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
                                          0x2b (size before relaxing)
-                0x0000000040080d60                bootloader_console_init
- *fill*         0x0000000040080d7f        0x1 
+                0x0000000040080e38                bootloader_console_init
+ *fill*         0x0000000040080e57        0x1 
  .text.bootloader_flash_update_id
-                0x0000000040080d80        0xd /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+                0x0000000040080e58        0xd /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
                                          0x10 (size before relaxing)
-                0x0000000040080d80                bootloader_flash_update_id
- *fill*         0x0000000040080d8d        0x3 
+                0x0000000040080e58                bootloader_flash_update_id
+ *fill*         0x0000000040080e65        0x3 
  .text.bootloader_read_flash_id
-                0x0000000040080d90       0x2a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
+                0x0000000040080e68       0x2a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
                                          0x2e (size before relaxing)
-                0x0000000040080d90                bootloader_read_flash_id
- *fill*         0x0000000040080dba        0x2 
+                0x0000000040080e68                bootloader_read_flash_id
+ *fill*         0x0000000040080e92        0x2 
  .text.esp_cpu_configure_region_protection
-                0x0000000040080dbc       0x2f /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+                0x0000000040080e94       0x2f /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
                                          0x33 (size before relaxing)
-                0x0000000040080dbc                esp_cpu_configure_region_protection
- *fill*         0x0000000040080deb        0x1 
+                0x0000000040080e94                esp_cpu_configure_region_protection
+ *fill*         0x0000000040080ec3        0x1 
  .text.rtc_vddsdio_get_config
-                0x0000000040080dec       0xa0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
-                0x0000000040080dec                rtc_vddsdio_get_config
+                0x0000000040080ec4       0xa0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+                0x0000000040080ec4                rtc_vddsdio_get_config
  .text.rtc_vddsdio_set_config
-                0x0000000040080e8c       0x46 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
-                0x0000000040080e8c                rtc_vddsdio_set_config
- *fill*         0x0000000040080ed2        0x2 
+                0x0000000040080f64       0x46 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+                0x0000000040080f64                rtc_vddsdio_set_config
+ *fill*         0x0000000040080faa        0x2 
  .text.rtc_clk_xtal_freq_estimate
-                0x0000000040080ed4       0xa3 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+                0x0000000040080fac       0xa3 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
                                          0xab (size before relaxing)
- *fill*         0x0000000040080f77        0x1 
+ *fill*         0x000000004008104f        0x1 
  .text.rtc_clk_init
-                0x0000000040080f78      0x1c6 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+                0x0000000040081050      0x1c6 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
                                         0x1fa (size before relaxing)
-                0x0000000040080f78                rtc_clk_init
- *fill*         0x000000004008113e        0x0 
- *fill*         0x000000004008113e        0x0 
- *fill*         0x000000004008113e        0x0 
- *fill*         0x000000004008113e        0x0 
- *fill*         0x000000004008113e        0x0 
- *fill*         0x000000004008113e        0x0 
- *fill*         0x000000004008113e        0x0 
- *fill*         0x000000004008113e        0x0 
- *fill*         0x000000004008113e        0x0 
- *fill*         0x000000004008113e        0x2 
+                0x0000000040081050                rtc_clk_init
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x0 
+ *fill*         0x0000000040081216        0x2 
  .text.mpu_hal_set_region_access
-                0x0000000040081140       0x3c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
-                0x0000000040081140                mpu_hal_set_region_access
+                0x0000000040081218       0x3c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
+                0x0000000040081218                mpu_hal_set_region_access
  *(.iram .iram.*)
  *(.fini.literal)
  *(.fini)
  *(.gnu.version)
-                0x000000004008118c                . = (. + 0x10)
- *fill*         0x000000004008117c       0x10 
-                0x000000004008118c                _text_end = ABSOLUTE (.)
-                0x000000004008118c                _etext = .
+                0x0000000040081264                . = (. + 0x10)
+ *fill*         0x0000000040081254       0x10 
+                0x0000000040081264                _text_end = ABSOLUTE (.)
+                0x0000000040081264                _etext = .
 
 .dram0.bss      0x000000003fff0000       0x30
                 0x000000003fff0000                . = ALIGN (0x8)
@@ -1581,7 +1591,7 @@ END GROUP
  *(.jcr)
                 0x000000003fff0034                _data_end = ABSOLUTE (.)
 
-.dram0.rodata   0x000000003fff0034     0x1ab0
+.dram0.rodata   0x000000003fff0034     0x1ab4
                 0x000000003fff0034                _rodata_start = ABSOLUTE (.)
  *(.rodata)
  .rodata        0x000000003fff0034        0x8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
@@ -1650,82 +1660,84 @@ END GROUP
                 0x000000003fff1266       0x19 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
  .rodata.__func__$4004
                 0x000000003fff127f       0x17 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
+ .rodata.wdt_reset_info_dump.str1.1
+                0x000000003fff1296       0x8c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .rodata.bootloader_init.str1.1
-                0x000000003fff1296      0x2c6 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                0x000000003fff1322      0x23e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .rodata.CSWTCH$28
-                0x000000003fff155c        0x5 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                0x000000003fff1560        0x5 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .rodata.str1.1
-                0x000000003fff1561       0x2b /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                0x000000003fff1565       0x2b /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .rodata.CSWTCH$27
-                0x000000003fff158c       0x14 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                0x000000003fff1590       0x14 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .rodata.CSWTCH$26
-                0x000000003fff15a0       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                0x000000003fff15a4       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .rodata.__func__$7434
-                0x000000003fff15e0       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                0x000000003fff15e4       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .rodata.CSWTCH$0
-                0x000000003fff15f0        0x7 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+                0x000000003fff15f4        0x7 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
  .rodata.bootloader_read_bootloader_header.str1.1
-                0x000000003fff15f7       0x3f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x000000003fff15fb       0x3f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
                                          0x44 (size before relaxing)
  .rodata.bootloader_check_bootloader_validity.str1.1
-                0x000000003fff1636       0x29 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x000000003fff163a       0x29 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
  .rodata.bootloader_enable_random.str1.1
-                0x000000003fff165f       0x3c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x000000003fff1663       0x3c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
  .rodata.bootloader_print_banner.str1.1
-                0x000000003fff169b       0x6f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x000000003fff169f       0x6f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
  .rodata.bootloader_fill_random.str1.1
-                0x000000003fff170a       0x66 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+                0x000000003fff170e       0x66 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
  .rodata.__func__$3190
-                0x000000003fff1770       0x17 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+                0x000000003fff1774       0x17 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
  .rodata.rtc_clk_xtal_freq_estimate.str1.1
-                0x000000003fff1787       0xe3 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
- *fill*         0x000000003fff186a        0x2 
+                0x000000003fff178b       0xe3 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+ *fill*         0x000000003fff186e        0x2 
  .rodata.rtc_clk_xtal_freq_estimate
-                0x000000003fff186c       0x64 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+                0x000000003fff1870       0x64 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
  .rodata.rtc_clk_init.str1.1
-                0x000000003fff18d0       0xd9 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+                0x000000003fff18d4       0xd9 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
  .rodata.rtc_clk_cpu_freq_to_pll_mhz.str1.1
-                0x000000003fff19a9       0x31 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000003fff19ad       0x31 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
  .rodata.rtc_clk_cpu_freq_get_config.str1.1
-                0x000000003fff19da       0x3b /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x000000003fff19de       0x3b /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
  .rodata.rtc_clk_cal_internal.str1.1
-                0x000000003fff1a15       0xba /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+                0x000000003fff1a19       0xba /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
  .rodata.__func__$3994
-                0x000000003fff1acf       0x15 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+                0x000000003fff1ad3       0x15 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
  *(.gnu.linkonce.r.*)
  *(.rodata1)
-                0x000000003fff1ae4                __XT_EXCEPTION_TABLE_ = ABSOLUTE (.)
+                0x000000003fff1ae8                __XT_EXCEPTION_TABLE_ = ABSOLUTE (.)
  *(.xt_except_table)
  *(.gcc_except_table)
  *(.gnu.linkonce.e.*)
  *(.gnu.version_r)
  *(.eh_frame)
-                0x000000003fff1ae4                . = ((. + 0x3) & 0xfffffffffffffffc)
-                0x000000003fff1ae4                __init_array_start = ABSOLUTE (.)
+                0x000000003fff1ae8                . = ((. + 0x3) & 0xfffffffffffffffc)
+                0x000000003fff1ae8                __init_array_start = ABSOLUTE (.)
  *crtbegin.*(.ctors)
  *(EXCLUDE_FILE(*crtend.*) .ctors)
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
-                0x000000003fff1ae4                __init_array_end = ABSOLUTE (.)
+                0x000000003fff1ae8                __init_array_end = ABSOLUTE (.)
  *crtbegin.*(.dtors)
  *(EXCLUDE_FILE(*crtend.*) .dtors)
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
-                0x000000003fff1ae4                __XT_EXCEPTION_DESCS_ = ABSOLUTE (.)
+                0x000000003fff1ae8                __XT_EXCEPTION_DESCS_ = ABSOLUTE (.)
  *(.xt_except_desc)
  *(.gnu.linkonce.h.*)
-                0x000000003fff1ae4                __XT_EXCEPTION_DESCS_END__ = ABSOLUTE (.)
+                0x000000003fff1ae8                __XT_EXCEPTION_DESCS_END__ = ABSOLUTE (.)
  *(.xt_except_desc_end)
  *(.dynamic)
  *(.gnu.version_d)
-                0x000000003fff1ae4                _rodata_end = ABSOLUTE (.)
-                0x000000003fff1ae4                _lit4_start = ABSOLUTE (.)
+                0x000000003fff1ae8                _rodata_end = ABSOLUTE (.)
+                0x000000003fff1ae8                _lit4_start = ABSOLUTE (.)
  *(*.lit4)
  *(.lit4.*)
  *(.gnu.linkonce.lit4.*)
-                0x000000003fff1ae4                _lit4_end = ABSOLUTE (.)
-                0x000000003fff1ae4                . = ALIGN (0x4)
-                0x000000003fff1ae4                _dram_end = ABSOLUTE (.)
+                0x000000003fff1ae8                _lit4_end = ABSOLUTE (.)
+                0x000000003fff1ae8                . = ALIGN (0x4)
+                0x000000003fff1ae8                _dram_end = ABSOLUTE (.)
                 0x0000000040008550                PROVIDE (ets_update_cpu_frequency = 0x40008550)
                 [!provide]                        PROVIDE (MD5Final = 0x4005db1c)
                 [!provide]                        PROVIDE (MD5Init = 0x4005da7c)
@@ -5221,7 +5233,7 @@ END GROUP
                 0x000000003ff9609c                __month_lengths = 0x3ff9609c
 OUTPUT(/home/venito/ASS/audio-streaming-system/build/bootloader/bootloader.elf elf32-xtensa-le)
 
-.debug_frame    0x0000000000000000     0x12a0
+.debug_frame    0x0000000000000000     0x12b8
  .debug_frame   0x0000000000000000       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)
  .debug_frame   0x0000000000000040      0x148 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
  .debug_frame   0x0000000000000188       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
@@ -5233,28 +5245,28 @@ OUTPUT(/home/venito/ASS/audio-streaming-system/build/bootloader/bootloader.elf e
  .debug_frame   0x0000000000000470       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
  .debug_frame   0x0000000000000498      0x130 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
  .debug_frame   0x00000000000005c8       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
- .debug_frame   0x0000000000000620       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
- .debug_frame   0x0000000000000660       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
- .debug_frame   0x00000000000006b8       0xa0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
- .debug_frame   0x0000000000000758       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
- .debug_frame   0x0000000000000780       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
- .debug_frame   0x00000000000007a8       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
- .debug_frame   0x00000000000007d0       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
- .debug_frame   0x00000000000007f8       0xb8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
- .debug_frame   0x00000000000008b0      0x100 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
- .debug_frame   0x00000000000009b0       0x70 /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
- .debug_frame   0x0000000000000a20      0x1a8 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
- .debug_frame   0x0000000000000bc8       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
- .debug_frame   0x0000000000000c08       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
- .debug_frame   0x0000000000000c48      0x118 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
- .debug_frame   0x0000000000000d60       0xd0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
- .debug_frame   0x0000000000000e30       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
- .debug_frame   0x0000000000000e88       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
- .debug_frame   0x0000000000000ec8      0x2e0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
- .debug_frame   0x00000000000011a8       0xd0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
- .debug_frame   0x0000000000001278       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
+ .debug_frame   0x0000000000000620       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+ .debug_frame   0x0000000000000678       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+ .debug_frame   0x00000000000006d0       0xa0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+ .debug_frame   0x0000000000000770       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
+ .debug_frame   0x0000000000000798       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
+ .debug_frame   0x00000000000007c0       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
+ .debug_frame   0x00000000000007e8       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+ .debug_frame   0x0000000000000810       0xb8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+ .debug_frame   0x00000000000008c8      0x100 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
+ .debug_frame   0x00000000000009c8       0x70 /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
+ .debug_frame   0x0000000000000a38      0x1a8 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_frame   0x0000000000000be0       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
+ .debug_frame   0x0000000000000c20       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
+ .debug_frame   0x0000000000000c60      0x118 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+ .debug_frame   0x0000000000000d78       0xd0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+ .debug_frame   0x0000000000000e48       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+ .debug_frame   0x0000000000000ea0       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+ .debug_frame   0x0000000000000ee0      0x2e0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+ .debug_frame   0x00000000000011c0       0xd0 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+ .debug_frame   0x0000000000001290       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
 
-.debug_info     0x0000000000000000    0x6ed0d
+.debug_info     0x0000000000000000    0x6ef71
  .debug_info    0x0000000000000000      0xeb8 /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)
  .debug_info    0x0000000000000eb8     0x81d4 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
  .debug_info    0x000000000000908c     0x6ebc /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
@@ -5266,28 +5278,28 @@ OUTPUT(/home/venito/ASS/audio-streaming-system/build/bootloader/bootloader.elf e
  .debug_info    0x0000000000021342      0xdd7 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
  .debug_info    0x0000000000022119     0x32be /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
  .debug_info    0x00000000000253d7     0x1434 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
- .debug_info    0x000000000002680b     0x92b3 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
- .debug_info    0x000000000002fabe      0xa3a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
- .debug_info    0x00000000000304f8     0x6135 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
- .debug_info    0x000000000003662d     0x1181 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
- .debug_info    0x00000000000377ae     0x5108 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
- .debug_info    0x000000000003c8b6     0x6479 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
- .debug_info    0x0000000000042d2f     0x12b1 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
- .debug_info    0x0000000000043fe0     0x19ac /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
- .debug_info    0x000000000004598c     0x12a0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
- .debug_info    0x0000000000046c2c     0x12db /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
- .debug_info    0x0000000000047f07     0x3550 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
- .debug_info    0x000000000004b457     0x1f40 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
- .debug_info    0x000000000004d397      0x9fa /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
- .debug_info    0x000000000004dd91     0x442d /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
- .debug_info    0x00000000000521be     0x5209 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
- .debug_info    0x00000000000573c7     0x523a /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
- .debug_info    0x000000000005c601     0x5662 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
- .debug_info    0x0000000000061c63     0x6ffc /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
- .debug_info    0x0000000000068c5f     0x55bd /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
- .debug_info    0x000000000006e21c      0xaf1 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
+ .debug_info    0x000000000002680b     0x9517 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+ .debug_info    0x000000000002fd22      0xa3a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+ .debug_info    0x000000000003075c     0x6135 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+ .debug_info    0x0000000000036891     0x1181 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
+ .debug_info    0x0000000000037a12     0x5108 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
+ .debug_info    0x000000000003cb1a     0x6479 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
+ .debug_info    0x0000000000042f93     0x12b1 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+ .debug_info    0x0000000000044244     0x19ac /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+ .debug_info    0x0000000000045bf0     0x12a0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
+ .debug_info    0x0000000000046e90     0x12db /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
+ .debug_info    0x000000000004816b     0x3550 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_info    0x000000000004b6bb     0x1f40 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
+ .debug_info    0x000000000004d5fb      0x9fa /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
+ .debug_info    0x000000000004dff5     0x442d /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+ .debug_info    0x0000000000052422     0x5209 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+ .debug_info    0x000000000005762b     0x523a /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+ .debug_info    0x000000000005c865     0x5662 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+ .debug_info    0x0000000000061ec7     0x6ffc /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+ .debug_info    0x0000000000068ec3     0x55bd /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+ .debug_info    0x000000000006e480      0xaf1 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
 
-.debug_abbrev   0x0000000000000000     0x698c
+.debug_abbrev   0x0000000000000000     0x69b0
  .debug_abbrev  0x0000000000000000      0x2f7 /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)
  .debug_abbrev  0x00000000000002f7      0x641 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
  .debug_abbrev  0x0000000000000938      0x2e0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
@@ -5299,28 +5311,28 @@ OUTPUT(/home/venito/ASS/audio-streaming-system/build/bootloader/bootloader.elf e
  .debug_abbrev  0x0000000000001cfb      0x26e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
  .debug_abbrev  0x0000000000001f69      0x554 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
  .debug_abbrev  0x00000000000024bd      0x2b4 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
- .debug_abbrev  0x0000000000002771      0x50c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
- .debug_abbrev  0x0000000000002c7d      0x1f0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
- .debug_abbrev  0x0000000000002e6d      0x34f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
- .debug_abbrev  0x00000000000031bc      0x202 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
- .debug_abbrev  0x00000000000033be      0x325 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
- .debug_abbrev  0x00000000000036e3      0x29a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
- .debug_abbrev  0x000000000000397d      0x278 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
- .debug_abbrev  0x0000000000003bf5      0x331 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
- .debug_abbrev  0x0000000000003f26      0x36b /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
- .debug_abbrev  0x0000000000004291      0x2ac /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
- .debug_abbrev  0x000000000000453d      0x4cd /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
- .debug_abbrev  0x0000000000004a0a      0x334 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
- .debug_abbrev  0x0000000000004d3e      0x1f1 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
- .debug_abbrev  0x0000000000004f2f      0x3ee /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
- .debug_abbrev  0x000000000000531d      0x435 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
- .debug_abbrev  0x0000000000005752      0x2e4 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
- .debug_abbrev  0x0000000000005a36      0x3d9 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
- .debug_abbrev  0x0000000000005e0f      0x5ab /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
- .debug_abbrev  0x00000000000063ba      0x353 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
- .debug_abbrev  0x000000000000670d      0x27f /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
+ .debug_abbrev  0x0000000000002771      0x530 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+ .debug_abbrev  0x0000000000002ca1      0x1f0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+ .debug_abbrev  0x0000000000002e91      0x34f /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+ .debug_abbrev  0x00000000000031e0      0x202 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
+ .debug_abbrev  0x00000000000033e2      0x325 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
+ .debug_abbrev  0x0000000000003707      0x29a /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
+ .debug_abbrev  0x00000000000039a1      0x278 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+ .debug_abbrev  0x0000000000003c19      0x331 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+ .debug_abbrev  0x0000000000003f4a      0x36b /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
+ .debug_abbrev  0x00000000000042b5      0x2ac /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
+ .debug_abbrev  0x0000000000004561      0x4cd /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_abbrev  0x0000000000004a2e      0x334 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
+ .debug_abbrev  0x0000000000004d62      0x1f1 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
+ .debug_abbrev  0x0000000000004f53      0x3ee /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+ .debug_abbrev  0x0000000000005341      0x435 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+ .debug_abbrev  0x0000000000005776      0x2e4 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+ .debug_abbrev  0x0000000000005a5a      0x3d9 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+ .debug_abbrev  0x0000000000005e33      0x5ab /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+ .debug_abbrev  0x00000000000063de      0x353 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+ .debug_abbrev  0x0000000000006731      0x27f /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
 
-.debug_loc      0x0000000000000000     0x7f0d
+.debug_loc      0x0000000000000000     0x8127
  .debug_loc     0x0000000000000000       0xed /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)
  .debug_loc     0x00000000000000ed     0x10f1 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
  .debug_loc     0x00000000000011de       0x82 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
@@ -5331,26 +5343,26 @@ OUTPUT(/home/venito/ASS/audio-streaming-system/build/bootloader/bootloader.elf e
  .debug_loc     0x00000000000023d6      0x1c6 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
  .debug_loc     0x000000000000259c     0x1816 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
  .debug_loc     0x0000000000003db2      0x217 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
- .debug_loc     0x0000000000003fc9      0x622 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
- .debug_loc     0x00000000000045eb       0xa8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
- .debug_loc     0x0000000000004693       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
- .debug_loc     0x00000000000046d3       0x60 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
- .debug_loc     0x0000000000004733       0x22 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
- .debug_loc     0x0000000000004755       0xad /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
- .debug_loc     0x0000000000004802      0x374 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
- .debug_loc     0x0000000000004b76      0x1d0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
- .debug_loc     0x0000000000004d46       0x15 /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
- .debug_loc     0x0000000000004d5b      0xaaf /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
- .debug_loc     0x000000000000580a       0x5d /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
- .debug_loc     0x0000000000005867      0xba1 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
- .debug_loc     0x0000000000006408      0x14d /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
- .debug_loc     0x0000000000006555      0x653 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
- .debug_loc     0x0000000000006ba8      0x249 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
- .debug_loc     0x0000000000006df1      0xc87 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
- .debug_loc     0x0000000000007a78      0x359 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
- .debug_loc     0x0000000000007dd1      0x13c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
+ .debug_loc     0x0000000000003fc9      0x83c /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+ .debug_loc     0x0000000000004805       0xa8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+ .debug_loc     0x00000000000048ad       0x40 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+ .debug_loc     0x00000000000048ed       0x60 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
+ .debug_loc     0x000000000000494d       0x22 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
+ .debug_loc     0x000000000000496f       0xad /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+ .debug_loc     0x0000000000004a1c      0x374 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+ .debug_loc     0x0000000000004d90      0x1d0 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
+ .debug_loc     0x0000000000004f60       0x15 /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
+ .debug_loc     0x0000000000004f75      0xaaf /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_loc     0x0000000000005a24       0x5d /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
+ .debug_loc     0x0000000000005a81      0xba1 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+ .debug_loc     0x0000000000006622      0x14d /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+ .debug_loc     0x000000000000676f      0x653 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+ .debug_loc     0x0000000000006dc2      0x249 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+ .debug_loc     0x000000000000700b      0xc87 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+ .debug_loc     0x0000000000007c92      0x359 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+ .debug_loc     0x0000000000007feb      0x13c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
 
-.debug_aranges  0x0000000000000000      0x878
+.debug_aranges  0x0000000000000000      0x880
  .debug_aranges
                 0x0000000000000000       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)
  .debug_aranges
@@ -5374,47 +5386,47 @@ OUTPUT(/home/venito/ASS/audio-streaming-system/build/bootloader/bootloader.elf e
  .debug_aranges
                 0x00000000000002a8       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
  .debug_aranges
-                0x00000000000002d8       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+                0x00000000000002d8       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
  .debug_aranges
-                0x0000000000000300       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+                0x0000000000000308       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
  .debug_aranges
-                0x0000000000000330       0x48 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x0000000000000338       0x48 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
  .debug_aranges
-                0x0000000000000378       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
+                0x0000000000000380       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
  .debug_aranges
-                0x0000000000000398       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
+                0x00000000000003a0       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
  .debug_aranges
-                0x00000000000003b8       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
+                0x00000000000003c0       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
  .debug_aranges
-                0x00000000000003d8       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+                0x00000000000003e0       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
  .debug_aranges
-                0x00000000000003f8       0x50 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+                0x0000000000000400       0x50 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
  .debug_aranges
-                0x0000000000000448       0x68 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
+                0x0000000000000450       0x68 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
  .debug_aranges
-                0x00000000000004b0       0x38 /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
+                0x00000000000004b8       0x38 /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
  .debug_aranges
-                0x00000000000004e8       0xa0 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+                0x00000000000004f0       0xa0 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
  .debug_aranges
-                0x0000000000000588       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
+                0x0000000000000590       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
  .debug_aranges
-                0x00000000000005b0       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
+                0x00000000000005b8       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
  .debug_aranges
-                0x00000000000005d8       0x70 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+                0x00000000000005e0       0x70 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
  .debug_aranges
-                0x0000000000000648       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+                0x0000000000000650       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
  .debug_aranges
-                0x00000000000006a0       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+                0x00000000000006a8       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
  .debug_aranges
-                0x00000000000006d0       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+                0x00000000000006d8       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
  .debug_aranges
-                0x00000000000006f8      0x108 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+                0x0000000000000700      0x108 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
  .debug_aranges
-                0x0000000000000800       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+                0x0000000000000808       0x58 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
  .debug_aranges
-                0x0000000000000858       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
+                0x0000000000000860       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
 
-.debug_ranges   0x0000000000000000     0x1468
+.debug_ranges   0x0000000000000000     0x1410
  .debug_ranges  0x0000000000000000       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)
  .debug_ranges  0x0000000000000030      0x2b8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
  .debug_ranges  0x00000000000002e8       0x60 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
@@ -5426,28 +5438,28 @@ OUTPUT(/home/venito/ASS/audio-streaming-system/build/bootloader/bootloader.elf e
  .debug_ranges  0x00000000000005e8       0x78 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
  .debug_ranges  0x0000000000000660      0x3a8 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
  .debug_ranges  0x0000000000000a08       0x38 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
- .debug_ranges  0x0000000000000a40      0x188 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
- .debug_ranges  0x0000000000000bc8       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
- .debug_ranges  0x0000000000000be8       0x38 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
- .debug_ranges  0x0000000000000c20       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
- .debug_ranges  0x0000000000000c30       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
- .debug_ranges  0x0000000000000c58       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
- .debug_ranges  0x0000000000000c68       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
- .debug_ranges  0x0000000000000c98      0x110 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
- .debug_ranges  0x0000000000000da8       0x78 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
- .debug_ranges  0x0000000000000e20       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
- .debug_ranges  0x0000000000000e48       0xe8 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
- .debug_ranges  0x0000000000000f30       0x18 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
- .debug_ranges  0x0000000000000f48       0x18 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
- .debug_ranges  0x0000000000000f60      0x148 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
- .debug_ranges  0x00000000000010a8       0x80 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
- .debug_ranges  0x0000000000001128       0x50 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
- .debug_ranges  0x0000000000001178       0x48 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
- .debug_ranges  0x00000000000011c0      0x238 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
- .debug_ranges  0x00000000000013f8       0x48 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
- .debug_ranges  0x0000000000001440       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
+ .debug_ranges  0x0000000000000a40      0x130 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+ .debug_ranges  0x0000000000000b70       0x20 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+ .debug_ranges  0x0000000000000b90       0x38 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+ .debug_ranges  0x0000000000000bc8       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
+ .debug_ranges  0x0000000000000bd8       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
+ .debug_ranges  0x0000000000000c00       0x10 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
+ .debug_ranges  0x0000000000000c10       0x30 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+ .debug_ranges  0x0000000000000c40      0x110 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+ .debug_ranges  0x0000000000000d50       0x78 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
+ .debug_ranges  0x0000000000000dc8       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
+ .debug_ranges  0x0000000000000df0       0xe8 /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_ranges  0x0000000000000ed8       0x18 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
+ .debug_ranges  0x0000000000000ef0       0x18 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
+ .debug_ranges  0x0000000000000f08      0x148 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+ .debug_ranges  0x0000000000001050       0x80 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+ .debug_ranges  0x00000000000010d0       0x50 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+ .debug_ranges  0x0000000000001120       0x48 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+ .debug_ranges  0x0000000000001168      0x238 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+ .debug_ranges  0x00000000000013a0       0x48 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+ .debug_ranges  0x00000000000013e8       0x28 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
 
-.debug_line     0x0000000000000000    0x1694a
+.debug_line     0x0000000000000000    0x16d97
  .debug_line    0x0000000000000000      0x614 /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)
  .debug_line    0x0000000000000614     0x2252 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
  .debug_line    0x0000000000002866      0x779 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random_esp32.o)
@@ -5459,26 +5471,26 @@ OUTPUT(/home/venito/ASS/audio-streaming-system/build/bootloader/bootloader.elf e
  .debug_line    0x0000000000006623      0x7e9 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
  .debug_line    0x0000000000006e0c     0x2559 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
  .debug_line    0x0000000000009365      0x824 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
- .debug_line    0x0000000000009b89     0x13a9 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
- .debug_line    0x000000000000af32      0x492 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
- .debug_line    0x000000000000b3c4      0x9e9 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
- .debug_line    0x000000000000bdad      0x3a7 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
- .debug_line    0x000000000000c154      0x641 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
- .debug_line    0x000000000000c795      0x3f9 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
- .debug_line    0x000000000000cb8e      0x57e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
- .debug_line    0x000000000000d10c      0xabd /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
- .debug_line    0x000000000000dbc9      0xacf /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
- .debug_line    0x000000000000e698      0x47d /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
- .debug_line    0x000000000000eb15     0x18cc /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
- .debug_line    0x00000000000103e1      0x4af /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
- .debug_line    0x0000000000010890      0x373 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
- .debug_line    0x0000000000010c03     0x1515 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
- .debug_line    0x0000000000012118      0x79b /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
- .debug_line    0x00000000000128b3      0x99c /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
- .debug_line    0x000000000001324f      0xb0e /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
- .debug_line    0x0000000000013d5d     0x1d8c /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
- .debug_line    0x0000000000015ae9      0xa45 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
- .debug_line    0x000000000001652e      0x41c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
+ .debug_line    0x0000000000009b89     0x17f6 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_esp32.o)
+ .debug_line    0x000000000000b37f      0x492 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_efuse_esp32.o)
+ .debug_line    0x000000000000b811      0x9e9 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+ .debug_line    0x000000000000c1fa      0x3a7 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_mem.o)
+ .debug_line    0x000000000000c5a1      0x641 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_clock_init.o)
+ .debug_line    0x000000000000cbe2      0x3f9 /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_console.o)
+ .debug_line    0x000000000000cfdb      0x57e /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_random.o)
+ .debug_line    0x000000000000d559      0xabd /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash_config_esp32.o)
+ .debug_line    0x000000000000e016      0xacf /home/venito/ASS/audio-streaming-system/build/bootloader/bootloader_support/libbootloader_support.a(flash_qio_mode.o)
+ .debug_line    0x000000000000eae5      0x47d /home/venito/ASS/audio-streaming-system/build/bootloader/log/liblog.a(log_noos.o)
+ .debug_line    0x000000000000ef62     0x18cc /home/venito/ASS/audio-streaming-system/build/bootloader/spi_flash/libspi_flash.a(spi_flash_rom_patch.o)
+ .debug_line    0x000000000001082e      0x4af /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_uart.o)
+ .debug_line    0x0000000000010cdd      0x373 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_rom/libesp_rom.a(esp_rom_sys.o)
+ .debug_line    0x0000000000011050     0x1515 /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(wdt_hal_iram.o)
+ .debug_line    0x0000000000012565      0x79b /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(cpu_util.o)
+ .debug_line    0x0000000000012d00      0x99c /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_init.o)
+ .debug_line    0x000000000001369c      0xb0e /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk_init.o)
+ .debug_line    0x00000000000141aa     0x1d8c /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_clk.o)
+ .debug_line    0x0000000000015f36      0xa45 /home/venito/ASS/audio-streaming-system/build/bootloader/esp_hw_support/libesp_hw_support.a(rtc_time.o)
+ .debug_line    0x000000000001697b      0x41c /home/venito/ASS/audio-streaming-system/build/bootloader/hal/libhal.a(mpu_hal.o)
 
 .debug_str      0x0000000000000000     0xa78a
  .debug_str     0x0000000000000000      0xa15 /home/venito/ASS/audio-streaming-system/build/bootloader/main/libmain.a(bootloader_start.o)

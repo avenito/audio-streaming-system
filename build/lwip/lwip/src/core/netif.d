@@ -112,8 +112,6 @@ lwip/src/core/netif.o: \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/prot/ieee.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/prot/etharp.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sys.h \
- /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/tcpip.h \
- /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/timeouts.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/netif/ethernet.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/dhcp.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/mld6.h \
@@ -342,10 +340,6 @@ lwip/src/core/netif.o: \
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/prot/etharp.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/sys.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/tcpip.h:
-
-/home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/timeouts.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/netif/ethernet.h:
 

@@ -64,6 +64,7 @@ cache_utils.o: \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/spi_flash.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/cache.h \
  /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/dport_access.h \
+ /home/venito/esp/esp-mdf/esp-idf/components/esp_ipc/include/esp_ipc.h \
  /home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_intr_alloc.h \
  /home/venito/esp/esp-mdf/esp-idf/components/spi_flash/include/esp_spi_flash.h \
  /home/venito/esp/esp-mdf/esp-idf/components/spi_flash/include/esp_spi_flash_counters.h \
@@ -197,6 +198,8 @@ cache_utils.o: \
 /home/venito/esp/esp-mdf/esp-idf/components/esp_rom/include/esp32/rom/cache.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/soc/esp32/include/soc/dport_access.h:
+
+/home/venito/esp/esp-mdf/esp-idf/components/esp_ipc/include/esp_ipc.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/esp_system/include/esp_intr_alloc.h:
 

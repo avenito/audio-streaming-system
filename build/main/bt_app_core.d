@@ -126,8 +126,7 @@ bt_app_core.o: /home/venito/ASS/audio-streaming-system/main/bt_app_core.c \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/priv/memp_priv.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/priv/mem_priv.h \
  /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/inet.h \
- /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/errno.h \
- /home/venito/ASS/audio-streaming-system/main/ASS.h
+ /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/errno.h
 
 /home/venito/esp/esp-mdf/esp-idf/components/freertos/port/xtensa/include/freertos/xtensa_api.h:
 
@@ -384,6 +383,4 @@ bt_app_core.o: /home/venito/ASS/audio-streaming-system/main/bt_app_core.c \
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/inet.h:
 
 /home/venito/esp/esp-mdf/esp-idf/components/lwip/lwip/src/include/lwip/errno.h:
-
-/home/venito/ASS/audio-streaming-system/main/ASS.h:
 /home/venito/ASS/audio-streaming-system/main/./bt_app_core.c:
