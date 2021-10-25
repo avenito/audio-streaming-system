@@ -34,6 +34,8 @@ RingbufHandle_t s_ringbuf_i2s = NULL;
 extern RingbufHandle_t s_ringbuf_wifi;
 extern int8_t broadcast_msg;
 
+//uint32_t aux = 0;
+
 bool bt_app_work_dispatch(bt_app_cb_t p_cback, uint16_t event, void *p_params, int param_len, bt_app_copy_cb_t p_copy_cback)
 {
     ESP_LOGD(BT_APP_CORE_TAG, "%s event 0x%x, param len %d", __func__, event, param_len);
@@ -146,6 +148,9 @@ void bt_i2s_task_start_up(void)
 		return;
 	}
     xTaskCreate(bt_i2s_task_handler, "BtI2ST", 1024, NULL, configMAX_PRIORITIES - 3, &s_bt_i2s_task_handle);
+
+//    aux = 0;
+
     return;
 }
 

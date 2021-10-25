@@ -83,7 +83,7 @@ int8_t		broadcast_msg = 0;
 uint32_t	broadcast_addr;
 int sock;
 
-
+uint8_t aux = 0;
 
 /* event for handler "bt_av_hdl_stack_up */
 enum {
@@ -202,6 +202,7 @@ static void udp_tra_task(void *arg)
 
 	size_t item_size;
 	int err, pck_count = 0;
+	aux = 0;
 
 	while (1) {
 
@@ -221,6 +222,7 @@ static void udp_tra_task(void *arg)
 				} else {
 					sending = to_send;
 				}
+				*(data + sent) = aux++;
 				err = sendto(sock, (data + sent), sending, 0, (struct sockaddr *)&origin_addr, sizeof(origin_addr));
 				//ESP_LOGI(TAG, " T-> Len: %d  3st Buff: %d, %d, %d", sending, (int) *(data + sent), (int) *(data + sent + 1), (int) *(data + sent + 2));
 				++pck_count;
@@ -241,7 +243,6 @@ static void udp_tra_task(void *arg)
 static void udp_server_task(void *arg)
 {
     //char addr_str[128];
-    char *rx_buff = &rx_buffer[0];
     int addr_family = AF_INET;
     int ip_protocol = 0;
 
@@ -290,10 +291,9 @@ static void udp_server_task(void *arg)
         while (1) {
 
             //ESP_LOGI(TAG, "Waiting for data ...");
-            len = recvfrom(sock, rx_buff, sizeof(rx_buffer) - 1, 0, (struct sockaddr *)&origin_addr, &socklen);
-            //ESP_LOGI(TAG, "R<- Len: %d  3st Buff: %d, %d, %d", len, (int) *rx_buff, (int) *(rx_buff +1), (int) *(rx_buff +2));
-            //ESP_LOGI(TAG, "Received on port %d, --> %s", ESP_PORT, rx_buffer);
-//            if (++s_pkt_cnt % 100 == 0) {
+            len = recvfrom(sock, rx_buffer, sizeof(rx_buffer) - 1, 0, (struct sockaddr *)&origin_addr, &socklen);
+            ESP_LOGI(TAG, "R<- %d", (int) rx_buffer[0]);
+//              if (++s_pkt_cnt % 100 == 0) {
 //    		        ESP_LOGI(BT_AV_TAG, ".");
 //    		    }
 //            // Error occurred during receiving
@@ -308,7 +308,7 @@ static void udp_server_task(void *arg)
 //                //rx_buffer[len] = 0; // Null-terminate whatever we received and treat like a string...
 #if (A2DP_SINK_OUTPUT_EXTERNAL_I2S == TRUE)
 
-                done = xRingbufferSend(s_ringbuf_i2s, (void *) rx_buff, len, (portTickType)portMAX_DELAY);
+                done = xRingbufferSend(s_ringbuf_i2s, (void *) &rx_buffer, len, (portTickType)portMAX_DELAY);
         		//ESP_LOGI(TAG, "s_ringbuf_i2s done: %u, len: %d", done, len);
 //                if(!done){
 //                	ESP_LOGI(TAG, "s_ringbuf_i2s overload");
