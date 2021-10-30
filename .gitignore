@@ -1,4 +1,4 @@
-.config
+#.config
 *.o
 *.pyc
 
@@ -23,12 +23,12 @@ GPATH
 
 # Components Unit Test Apps files
 components/**/build
-components/**/sdkconfig
-components/**/sdkconfig.old
+#components/**/sdkconfig
+#components/**/sdkconfig.old
 
 # Example project files
-examples/**/sdkconfig
-examples/**/sdkconfig.old
+#examples/**/sdkconfig
+#examples/**/sdkconfig.old
 examples/**/build
 
 # Doc build artifacts
@@ -40,8 +40,8 @@ docs/_static/DejaVuSans.ttf
 docs/_static/NotoSansSC-Regular.otf
 
 # Unit test app files
-tools/unit-test-app/sdkconfig
-tools/unit-test-app/sdkconfig.old
+#tools/unit-test-app/sdkconfig
+#tools/unit-test-app/sdkconfig.old
 tools/unit-test-app/build
 tools/unit-test-app/builds
 tools/unit-test-app/output
@@ -52,8 +52,8 @@ log_ut_cmake
 
 # test application build files
 tools/test_apps/**/build
-tools/test_apps/**/sdkconfig
-tools/test_apps/**/sdkconfig.old
+#tools/test_apps/**/sdkconfig
+#tools/test_apps/**/sdkconfig.old
 
 # IDF monitor test
 tools/test_idf_monitor/outputs
